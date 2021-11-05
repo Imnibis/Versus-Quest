@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/testing/platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://enemies/charger/Charger.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -0.749146, -1.87288 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 158.003, 113.029 )
+scale = Vector2( 0.089, 0.018 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 83.6623, 92.6005 )
+scale = Vector2( 0.089, 0.018 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 173.18, 83.5236 )
