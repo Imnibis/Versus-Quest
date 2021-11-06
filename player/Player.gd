@@ -42,8 +42,6 @@ func _physics_process(delta):
 	if is_dead:
 			return
 				
-	print(velocity.y)
-				
 	if velocity.y > 0:
 		falling = true
 	elif velocity.y < 0:
@@ -116,6 +114,7 @@ func death():
 	$DyingTimer2.start(0.1)
 	$DyingTimer.start(1)
 	$DashEnable.hide()
+	$DashParticules.hide()
 
 func white_color():
 	$AnimatedSprite.hide()
