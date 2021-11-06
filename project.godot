@@ -14,6 +14,10 @@ config/name="Training Jam Game"
 config/description="UwU"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerVar="*res://common/PlayerVar.gd"
+
 [display]
 
 window/size/width=960

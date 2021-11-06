@@ -21,14 +21,11 @@ var keep_direction : Vector2 = Vector2(-1, 0)
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
 	$DashAgain.connect("timeout", self, "can_dash_again")
+	$DyingTimer.connect("timeout", self, "player_dead")
 	$DashEnable.emitting = true
 	$AnimatedSprite.play("Idle")
 
 func _physics_process(delta):
-	
-	if Input.is_action_pressed("ui_accept"):
-		death()
-	
 	velocity.y += GRAVITY
 	
 	if velocity.y > MAX_FALL_SPEED:
@@ -71,6 +68,11 @@ func death():
 	velocity = Vector2.ZERO
 	# play death animation
 	$DyingEffect.emitting = true
+	$DyingTimer.start(1)
+	$AnimatedSprite.hide()
+	$DashEnable.hide()
+
+func player_dead():
 	self.queue_free()
 
 ########## DASH FUNCTION
@@ -120,3 +122,15 @@ func handle_dash(delta):
 		$DashParticules.emitting = true
 	else:
 		$DashParticules.emitting = false
+
+########### damage with anything
+
+func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
+	if area.is_in_group("win"):
+		PlayerVar.has_win = true
+		print("jai win")
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("damage"):
+		pass
