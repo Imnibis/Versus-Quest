@@ -8,34 +8,6 @@
 [ext_resource path="res://player/Child_dash.png" type="Texture" id=6]
 [ext_resource path="res://player/Child_jump.png" type="Texture" id=7]
 
-[sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 7 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 7 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 7 )
-region = Rect2( 48, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 7 )
-region = Rect2( 64, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 7 )
-region = Rect2( 80, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 7 )
-region = Rect2( 96, 0, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
@@ -52,57 +24,85 @@ region = Rect2( 32, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 7 )
 region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 7 )
 region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 7 )
 region = Rect2( 48, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 7 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 5 )
 region = Rect2( 80, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 10.0
-}, {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 19 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 12 ) ],
 "loop": true,
 "name": "Dash",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 10.0
@@ -111,13 +111,13 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 7, 7.5 )
 
-[sub_resource type="Curve" id=12]
+[sub_resource type="Curve" id=21]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.11591, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=13]
-curve = SubResource( 12 )
+[sub_resource type="CurveTexture" id=22]
+curve = SubResource( 21 )
 
-[sub_resource type="ParticlesMaterial" id=14]
+[sub_resource type="ParticlesMaterial" id=23]
 emission_shape = 1
 emission_sphere_radius = 4.0
 flag_disable_z = true
@@ -128,29 +128,29 @@ initial_velocity = 19.0
 angular_velocity = -180.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 13 )
+scale_curve = SubResource( 22 )
 
-[sub_resource type="Curve" id=15]
-_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -3.02273, 0.0, 0, 0 ]
+[sub_resource type="Curve" id=28]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.75578, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
-curve = SubResource( 15 )
+[sub_resource type="CurveTexture" id=29]
+curve = SubResource( 28 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=30]
 emission_shape = 1
-emission_sphere_radius = 5.0
+emission_sphere_radius = 4.0
 flag_disable_z = true
 direction = Vector3( 0, 0, 0 )
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 5.0
+initial_velocity = 10.0
+angular_velocity = 10.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale = 0.7
-scale_curve = SubResource( 16 )
-color = Color( 0.356863, 0.960784, 0.133333, 1 )
+scale = 0.5
+scale_curve = SubResource( 29 )
 
-[sub_resource type="ParticlesMaterial" id=18]
+[sub_resource type="ParticlesMaterial" id=27]
 emission_shape = 1
 emission_sphere_radius = 5.0
 flag_disable_z = true
@@ -167,11 +167,13 @@ color = Color( 0.996078, 0.0509804, 0.0509804, 1 )
 ]]
 script = ExtResource( 2 )
 dash_object = ExtResource( 4 )
+GRAVITY = 10
+JUMP_FORCE = 200
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 11 )
+frames = SubResource( 19 )
 animation = "Jump"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -198,17 +200,21 @@ one_shot = true
 [node name="DyingTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="DyingTimer2" type="Timer" parent="."]
+one_shot = true
+
 [node name="DashParticules" type="Particles2D" parent="."]
 emitting = false
 amount = 80
 local_coords = false
-process_material = SubResource( 14 )
+process_material = SubResource( 23 )
 texture = ExtResource( 3 )
 
 [node name="DashEnable" type="Particles2D" parent="."]
 position = Vector2( 1, 0 )
-amount = 10
-process_material = SubResource( 17 )
+amount = 15
+lifetime = 0.6
+process_material = SubResource( 30 )
 texture = ExtResource( 3 )
 
 [node name="DyingEffect" type="Particles2D" parent="."]
@@ -217,7 +223,7 @@ amount = 100
 lifetime = 0.4
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 18 )
+process_material = SubResource( 27 )
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_Area2D_area_shape_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

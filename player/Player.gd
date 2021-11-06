@@ -7,7 +7,9 @@ export var DASH_SPEED = 300
 export var DASH_LENGTH = 0.15
 export var NO_DASH = 3
 export var MAX_SPEED = 80
-export var GRAVITY = 20
+export var GRAVITY = 15
+export var FALL_MULTIPLIER = 2.5
+export var LOW_JUMP_MULTIPLIER = 3
 export var MAX_FALL_SPEED = 200
 export var JUMP_FORCE = 300
 export var ACCELERATION = 10
@@ -25,6 +27,7 @@ func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
 	$DashAgain.connect("timeout", self, "can_dash_again")
 	$DyingTimer.connect("timeout", self, "player_dead")
+	$DyingTimer2.connect("timeout", self, "white_color")
 	$DashEnable.emitting = true
 	$AnimatedSprite.play("Idle")
 
@@ -32,12 +35,12 @@ func _physics_process(delta):
 	
 	if is_dead:
 			return
-	
-	velocity.y += GRAVITY
-	
-	if velocity.y > 20:
+				
+	print(velocity.y)
+				
+	if velocity.y > 0:
 		falling = true
-	elif velocity.y < 20:
+	elif velocity.y < 0:
 		jumping = true
 	else:
 		falling = false
@@ -71,10 +74,24 @@ func _physics_process(delta):
 		if Input.is_action_pressed("jump"):
 			velocity.y = -JUMP_FORCE
 
+	
+
 	handle_dash(delta)
+	handle_jump()
 	move()
 
 ########## MOVE FUNCTION
+
+func handle_jump():
+	if Input.is_action_pressed("jump"):
+		if velocity.y >= 0:
+			velocity.y += GRAVITY * FALL_MULTIPLIER
+		else:
+			velocity.y += GRAVITY
+		if is_on_floor():
+			velocity.y = -JUMP_FORCE
+	else:
+		velocity.y += GRAVITY * LOW_JUMP_MULTIPLIER
 
 func move():
 	if is_dashing:
@@ -87,11 +104,15 @@ func move():
 func death():
 	velocity = Vector2.ZERO
 	is_dead = true
+	$AnimatedSprite.modulate = Color(255, 255, 255, 1)
 	# play death animation
 	$DyingEffect.emitting = true
+	$DyingTimer2.start(0.1)
 	$DyingTimer.start(1)
-	$AnimatedSprite.hide()
 	$DashEnable.hide()
+
+func white_color():
+	$AnimatedSprite.hide()
 
 func player_dead():
 	self.queue_free()
