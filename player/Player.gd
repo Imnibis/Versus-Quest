@@ -19,6 +19,7 @@ var velocity : Vector2 = Vector2.ZERO
 var keep_direction : Vector2 = Vector2(-1, 0)
 var falling : bool = false
 var jumping : bool = false
+var is_dead : bool = false
 
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
@@ -28,6 +29,10 @@ func _ready():
 	$AnimatedSprite.play("Idle")
 
 func _physics_process(delta):
+	
+	if is_dead:
+			return
+	
 	velocity.y += GRAVITY
 	
 	if velocity.y > 20:
@@ -81,6 +86,7 @@ func move():
 
 func death():
 	velocity = Vector2.ZERO
+	is_dead = true
 	# play death animation
 	$DyingEffect.emitting = true
 	$DyingTimer.start(1)
