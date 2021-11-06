@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://enemies/charger/assets/placeholder.jpg" type="Texture" id=1]
-[ext_resource path="res://enemies/charger/scripts/move.gd" type="Script" id=2]
+[ext_resource path="res://enemies/charger/placeholder.jpg" type="Texture" id=1]
+[ext_resource path="res://enemies/charger/Charger.gd" type="Script" id=2]
+[ext_resource path="res://common/DashSprite.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.04829, 3.46586 )
@@ -9,10 +10,15 @@ extents = Vector2( 3.04829, 3.46586 )
 [node name="KinematicBody2D" type="KinematicBody2D"]
 scale = Vector2( 4, 4 )
 script = ExtResource( 2 )
-speed = 12000.0
+dash_object = ExtResource( 3 )
+max_speed = 80.0
+acceleration = 10.0
+max_fall_speed = 200.0
+gravity = 20.0
 dash_duration = 0.2
 dash_distance = 700.0
 dash_animation_smoothing = 300.0
+dash_ghost_frequency = 0.03
 dash_cooldown = 0.5
 
 [node name="Sprite" type="Sprite" parent="."]
