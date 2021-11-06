@@ -15,7 +15,7 @@ var keep_direction : Vector2 = Vector2(-1, 0)
 
 func _ready():
 	pass
-	#$AnimatedSprite.play("Idle")
+	$AnimatedSprite.play("Idle")
 
 func _physics_process(delta):
 	if velocity.y > MAX_FALL_SPEED:
@@ -26,22 +26,17 @@ func _physics_process(delta):
 	if Input.is_action_pressed("p2_right"):
 		velocity.x += ACCELERATION
 		keep_direction.x = 1
-		$Sprite.flip_h = false
-		#$AnimatedSprite.flip_h = true
-		#$AnimatedSprite.play("Walk")
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("Walk")
 	elif Input.is_action_pressed("p2_left"):
 		velocity.x -= ACCELERATION
 		keep_direction.x = -1
-		$Sprite.flip_h = false
-		#$AnimatedSprite.flip_h = false
-		#$AnimatedSprite.play("Walk")
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("Walk")
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.2)
-		#$AnimatedSprite.play("Idle")
+		$AnimatedSprite.play("Idle")
 	
-	#if is_on_floor():
-	#	if Input.is_action_pressed("p2_action"):
-	#		velocity.y = -JUMP_FORCE
 	handle_jump()
 	
 	velocity = move_and_slide(velocity, UP)
