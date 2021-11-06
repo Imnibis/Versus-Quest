@@ -17,6 +17,8 @@ var can_dash : bool = true
 var dash_direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
 var keep_direction : Vector2 = Vector2(-1, 0)
+var falling : bool = false
+var jumping : bool = false
 
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
@@ -28,6 +30,15 @@ func _ready():
 func _physics_process(delta):
 	velocity.y += GRAVITY
 	
+	if velocity.y > 20:
+		falling = true
+	elif velocity.y < 20:
+		jumping = true
+	else:
+		falling = false
+		jumping = false
+
+				
 	if velocity.y > MAX_FALL_SPEED:
 		velocity.y = MAX_FALL_SPEED
 	
@@ -43,6 +54,10 @@ func _physics_process(delta):
 		keep_direction.x = -1
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Walk")
+	elif falling:
+		$AnimatedSprite.play("Fall")
+	elif jumping:
+		$AnimatedSprite.play("Jump")
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.2)
 		$AnimatedSprite.play("Idle")
