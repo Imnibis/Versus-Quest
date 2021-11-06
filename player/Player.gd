@@ -16,12 +16,13 @@ var is_dashing : bool = false
 var can_dash : bool = true
 var dash_direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
-var keep_direction : Vector2 = Vector2(1, 0)
+var keep_direction : Vector2 = Vector2(-1, 0)
 
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
 	$DashAgain.connect("timeout", self, "can_dash_again")
 	$DashEnable.emitting = true
+	$AnimatedSprite.play("Idle")
 
 func _physics_process(delta):
 	
@@ -38,11 +39,16 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Right"):
 		velocity.x += ACCELERATION
 		keep_direction.x = 1
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("Walk")
 	elif Input.is_action_pressed("Left"):
 		velocity.x -= ACCELERATION
 		keep_direction.x = -1
+		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.play("Walk")
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.2)
+		$AnimatedSprite.play("Idle")
 	
 	if is_on_floor():
 		if Input.is_action_pressed("jump"):
@@ -104,10 +110,11 @@ func handle_dash(delta):
 		$DashEnable.emitting = false 
 		
 	if is_dashing:
+		$AnimatedSprite.play("Dash")
 		var dash_node = dash_object.instance()
-		dash_node.texture = $Sprite.texture
+		dash_node.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation, $AnimatedSprite.frame)
 		dash_node.global_position = global_position
-		#dash_node.flip_h = $animation.flip_h
+		dash_node.flip_h = $AnimatedSprite.flip_h
 		get_parent().add_child(dash_node)
 	
 		$DashParticules.emitting = true
