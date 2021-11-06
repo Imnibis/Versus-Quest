@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/common/background-foreground/fg_0.png" type="Texture" id=6]
 [ext_resource path="res://enemies/traps/spikes/spikes.tscn" type="PackedScene" id=7]
 [ext_resource path="res://enemies/traps/arrow_trap/arrow_trap_right.tscn" type="PackedScene" id=8]
+[ext_resource path="res://common/EndFlag.tscn" type="PackedScene" id=9]
 
 [node name="Level1" type="Node2D"]
 
@@ -40,13 +41,19 @@ tile_data = PoolIntArray( -1, 0, 65537, -65536, 0, 65537, -65535, 0, 65537, -655
 
 [node name="Traps" type="Node2D" parent="."]
 
-[node name="spikes" parent="Traps" instance=ExtResource( 7 )]
+[node name="spikes" parent="Traps" groups=[
+"damage",
+] instance=ExtResource( 7 )]
 position = Vector2( 95.2033, 282.224 )
 
-[node name="spikes2" parent="Traps" instance=ExtResource( 7 )]
+[node name="spikes2" parent="Traps" groups=[
+"damage",
+] instance=ExtResource( 7 )]
 position = Vector2( 412.841, 282.386 )
 
-[node name="spikes3" parent="Traps" instance=ExtResource( 7 )]
+[node name="spikes3" parent="Traps" groups=[
+"damage",
+] instance=ExtResource( 7 )]
 position = Vector2( 266.236, 186.569 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -57,6 +64,10 @@ limit_top = 0
 limit_right = 480
 limit_bottom = 310
 limit_smoothed = true
+
+[node name="EndFlag" parent="." instance=ExtResource( 9 )]
+position = Vector2( 438.502, 48.6433 )
+scale = Vector2( 2, 2 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 25.298, 60.6949 )
