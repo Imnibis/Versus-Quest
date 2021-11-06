@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lever_turned_left.png-85ced71fd89a9ea011fbd0b53f4cc948.stex"
+path="res://.import/lever_turned_left.png-134b8117518b5afddc45e0c07ea52286.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/common/Props/lever_turned_left.png"
-dest_files=[ "res://.import/lever_turned_left.png-85ced71fd89a9ea011fbd0b53f4cc948.stex" ]
+source_file="res://enemies/traps/arrow_trap/lever_turned_left.png"
+dest_files=[ "res://.import/lever_turned_left.png-134b8117518b5afddc45e0c07ea52286.stex" ]
 
 [params]
 

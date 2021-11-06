@@ -7,10 +7,6 @@ func _ready():
 	if (direction == "LEFT"):
 		$Arrow_trap_sprite.rotation_degrees = 180
 
-func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
-		shoot()	
-
 func shoot():
 	var arrow = Arrow.instance()
 	match direction:
