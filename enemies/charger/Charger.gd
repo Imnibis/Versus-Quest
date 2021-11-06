@@ -43,8 +43,10 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = direction == 1
 		if movement_x != 0:
 			velocity.x += movement_x * acceleration
+			$AnimatedSprite.play("Walk")
 		else:
 			velocity.x *= 0.2
+			$AnimatedSprite.play("Idle")
 		velocity.x = clamp(velocity.x, -max_speed, max_speed)
 		if not is_on_floor():
 			velocity.y += gravity
@@ -58,6 +60,7 @@ func dash():
 	last_ghost = 0
 	dashing = true
 	can_dash = false
+	$AnimatedSprite.play("Dash")
 	var original_position = position
 	var end_position = original_position + Vector2(dash_distance * direction, 0)
 	while time < dash_duration:
