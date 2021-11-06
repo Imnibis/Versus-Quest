@@ -11,7 +11,10 @@ func _ready():
 
 func _physics_process(delta):
 	position += transform.x * speed * delta
-	
+
+func setSpeed(value):
+	speed = value
+
 func _on_Arrow_body_entered(body):
 	if body.is_in_group("playable"):
 		print("u ded")

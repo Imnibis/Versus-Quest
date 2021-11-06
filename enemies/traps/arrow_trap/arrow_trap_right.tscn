@@ -4,10 +4,10 @@
 [ext_resource path="res://enemies/traps/arrow_trap/arrow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://enemies/traps/arrow_trap/Arrow_trap_right.png" type="Texture" id=3]
 
-[node name="Arrow_trap_right" type="Node2D"]
+[node name="Arrow_trap" type="Node2D"]
 script = ExtResource( 1 )
 Arrow = ExtResource( 2 )
 
-[node name="Arrow_trap_right" type="Sprite" parent="."]
+[node name="Arrow_trap_sprite" type="Sprite" parent="."]
 position = Vector2( -1.3427, -0.153355 )
 texture = ExtResource( 3 )
