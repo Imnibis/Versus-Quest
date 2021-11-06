@@ -17,6 +17,7 @@ var is_dashing : bool = false
 var can_dash : bool = true
 var dash_direction : Vector2 = Vector2.ZERO
 var velocity = Vector2.ZERO
+var keep_direction = Vector2(1, 0)
 
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
@@ -33,8 +34,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("Right"):
 		velocity.x += ACCELERATION
+		keep_direction.x = 1
 	elif Input.is_action_pressed("Left"):
 		velocity.x -= ACCELERATION
+		keep_direction.x = -1
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.2)
 	
@@ -64,8 +67,11 @@ func can_dash_again():
 func get_direction_from_input():
 	var move_dir = Vector2.ZERO
 	move_dir.x = -Input.get_action_strength("Left") + Input.get_action_strength("Right")
-	move_dir = move_dir.clamped(1)
-	
+
+	if move_dir == Vector2(0, 0):
+		move_dir.x = keep_direction.x
+
+	move_dir = move_dir.clamped(1)	
 	# WHEN ANIMATION
 	
 	#if move_dir == Vector2(0, 0):

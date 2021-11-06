@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/common/background-foreground/bg_2.png" type="Texture" id=3]
 [ext_resource path="res://assets/common/background-foreground/bg_0.png" type="Texture" id=4]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node2D"]
 
@@ -39,3 +40,6 @@ limit_top = 0
 limit_right = 478
 limit_bottom = 310
 limit_smoothed = true
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 57.0819, 216.436 )
