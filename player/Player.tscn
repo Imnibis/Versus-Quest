@@ -120,7 +120,9 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.996078, 0.0509804, 0.0509804, 1 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"playable",
+]]
 script = ExtResource( 2 )
 dash_object = ExtResource( 4 )
 
