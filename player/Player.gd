@@ -5,7 +5,7 @@ const UP = Vector2(0, -1)
 
 export(PackedScene) var dash_object
 export var DASH_SPEED = 300
-export var DASH_LENGTH = 0.25
+export var DASH_LENGTH = 0.15
 export var NO_DASH = 3
 export var MAX_SPEED = 80
 export var GRAVITY = 20
@@ -63,6 +63,7 @@ func dash_timer_timeout():
 
 func can_dash_again():
 	can_dash = true
+	$DashEnable.emitting = true
 
 func get_direction_from_input():
 	var move_dir = Vector2.ZERO
@@ -89,6 +90,7 @@ func handle_dash(delta):
 		dash_direction = get_direction_from_input()
 		$DashTimer.start(DASH_LENGTH)
 		$DashAgain.start(NO_DASH)
+		$DashEnable.emitting = false
 		
 	if is_dashing:
 		var dash_node = dash_object.instance()
