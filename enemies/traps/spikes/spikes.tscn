@@ -81,19 +81,29 @@ hframes = 6
 position = Vector2( 0.117981, 1.41581 )
 shape = SubResource( 1 )
 
-[node name="Collisions" type="Area2D" parent="."]
+[node name="Collisions" type="Area2D" parent="." groups=[
+"damage",
+]]
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionLow" type="CollisionShape2D" parent="Collisions"]
+[node name="CollisionLow" type="CollisionShape2D" parent="Collisions" groups=[
+"damage",
+]]
 position = Vector2( 0.235977, 4.01147 )
 shape = SubResource( 2 )
 disabled = true
 
-[node name="CollisionMiddle" type="CollisionShape2D" parent="Collisions"]
+[node name="CollisionMiddle" type="CollisionShape2D" parent="Collisions" groups=[
+"damage",
+]]
 position = Vector2( -0.117981, 1.5338 )
 shape = SubResource( 3 )
 disabled = true
 
-[node name="CollisionHigh" type="CollisionShape2D" parent="Collisions"]
+[node name="CollisionHigh" type="CollisionShape2D" parent="Collisions" groups=[
+"damage",
+]]
 position = Vector2( -0.23597, -1.41581 )
 shape = SubResource( 4 )
 disabled = true

@@ -107,13 +107,6 @@ func get_direction_from_input():
 		move_dir.x = keep_direction.x
 
 	move_dir = move_dir.clamped(1)	
-	# WHEN ANIMATION
-	
-	#if move_dir == Vector2(0, 0):
-	#	if $animation.flip_h:
-	#		move_dir.x = -1
-	#	else:
-	#		move_dir.x = 1
 	
 	return move_dir * DASH_SPEED
 
@@ -143,7 +136,9 @@ func handle_dash(delta):
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
 	if area.is_in_group("win"):
 		PlayerVar.has_win = true
-		print("jai win")
+	if area.is_in_group("damage"):
+		death()
+		PlayerVar.is_dead = true
 
 
 func _on_Area2D_body_entered(body):
