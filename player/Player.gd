@@ -148,4 +148,4 @@ func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("damage"):
-		pass
+		death()
