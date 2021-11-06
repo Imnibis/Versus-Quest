@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-const UP = Vector2(0, -1)
-
+const UP : Vector2 = Vector2(0, -1)
 
 export(PackedScene) var dash_object
 export var DASH_SPEED = 300
@@ -16,14 +15,18 @@ export var ACCELERATION = 10
 var is_dashing : bool = false
 var can_dash : bool = true
 var dash_direction : Vector2 = Vector2.ZERO
-var velocity = Vector2.ZERO
-var keep_direction = Vector2(1, 0)
+var velocity : Vector2 = Vector2.ZERO
+var keep_direction : Vector2 = Vector2(1, 0)
 
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
 	$DashAgain.connect("timeout", self, "can_dash_again")
+	$DashEnable.emitting = true
 
 func _physics_process(delta):
+	
+	if Input.is_action_pressed("ui_accept"):
+		death()
 	
 	velocity.y += GRAVITY
 	
@@ -55,6 +58,14 @@ func move():
 		velocity = move_and_slide(dash_direction, UP)
 	else:
 		velocity = move_and_slide(velocity, UP)
+
+########## DEATH FUNCTION
+
+func death():
+	velocity = Vector2.ZERO
+	# play death animation
+	$DyingEffect.emitting = true
+	self.queue_free()
 
 ########## DASH FUNCTION
 
@@ -90,7 +101,7 @@ func handle_dash(delta):
 		dash_direction = get_direction_from_input()
 		$DashTimer.start(DASH_LENGTH)
 		$DashAgain.start(NO_DASH)
-		$DashEnable.emitting = false
+		$DashEnable.emitting = false 
 		
 	if is_dashing:
 		var dash_node = dash_object.instance()
