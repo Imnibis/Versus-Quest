@@ -7,12 +7,16 @@
 position = Vector2( -0.749146, -1.87288 )
 
 [node name="Node2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 158.003, 113.029 )
-scale = Vector2( 0.089, 0.018 )
+position = Vector2( 176.38, 100.646 )
+scale = Vector2( 0.594, 0.103 )
 
 [node name="Node2D2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 83.6623, 92.6005 )
-scale = Vector2( 0.089, 0.018 )
+position = Vector2( -269.213, -21.8505 )
+scale = Vector2( 0.278, 0.102 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 173.18, 83.5236 )
+position = Vector2( 17.5598, -55.3717 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 3, 3 )
