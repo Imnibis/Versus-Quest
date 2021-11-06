@@ -17,20 +17,33 @@ var can_dash : bool = true
 var dash_direction : Vector2 = Vector2.ZERO
 var velocity : Vector2 = Vector2.ZERO
 var keep_direction : Vector2 = Vector2(-1, 0)
+var falling : bool = false
+var jumping : bool = false
+var is_dead : bool = false
 
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
 	$DashAgain.connect("timeout", self, "can_dash_again")
+	$DyingTimer.connect("timeout", self, "player_dead")
 	$DashEnable.emitting = true
 	$AnimatedSprite.play("Idle")
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("ui_accept"):
-		death()
+	if is_dead:
+			return
 	
 	velocity.y += GRAVITY
 	
+	if velocity.y > 20:
+		falling = true
+	elif velocity.y < 20:
+		jumping = true
+	else:
+		falling = false
+		jumping = false
+
+				
 	if velocity.y > MAX_FALL_SPEED:
 		velocity.y = MAX_FALL_SPEED
 	
@@ -46,6 +59,10 @@ func _physics_process(delta):
 		keep_direction.x = -1
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Walk")
+	elif falling:
+		$AnimatedSprite.play("Fall")
+	elif jumping:
+		$AnimatedSprite.play("Jump")
 	else:
 		velocity.x = lerp(velocity.x, 0, 0.2)
 		$AnimatedSprite.play("Idle")
@@ -69,8 +86,14 @@ func move():
 
 func death():
 	velocity = Vector2.ZERO
+	is_dead = true
 	# play death animation
 	$DyingEffect.emitting = true
+	$DyingTimer.start(1)
+	$AnimatedSprite.hide()
+	$DashEnable.hide()
+
+func player_dead():
 	self.queue_free()
 
 ########## DASH FUNCTION
@@ -90,13 +113,6 @@ func get_direction_from_input():
 		move_dir.x = keep_direction.x
 
 	move_dir = move_dir.clamped(1)	
-	# WHEN ANIMATION
-	
-	#if move_dir == Vector2(0, 0):
-	#	if $animation.flip_h:
-	#		move_dir.x = -1
-	#	else:
-	#		move_dir.x = 1
 	
 	return move_dir * DASH_SPEED
 
@@ -120,3 +136,17 @@ func handle_dash(delta):
 		$DashParticules.emitting = true
 	else:
 		$DashParticules.emitting = false
+
+########### damage with anything
+
+func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
+	if area.is_in_group("win"):
+		PlayerVar.has_win = true
+	if area.is_in_group("damage"):
+		death()
+		PlayerVar.is_dead = true
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("damage"):
+		death()
