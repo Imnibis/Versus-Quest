@@ -27,6 +27,7 @@ var velocity = Vector2(0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite.play("Idle")
 	$DashCooldown.connect("timeout", self, "reset_dash")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,7 +40,7 @@ func _physics_process(delta):
 	if not dashing:
 		var movement_x = Input.get_action_strength("p2_right") - Input.get_action_strength("p2_left")
 		direction = -1 if movement_x < 0 else (1 if movement_x > 0 else direction)
-		$Sprite.flip_h = direction == 1
+		$AnimatedSprite.flip_h = direction == 1
 		if movement_x != 0:
 			velocity.x += movement_x * acceleration
 		else:
@@ -71,10 +72,10 @@ func dash():
 
 func spawn_ghost():
 	var dash_node = dash_object.instance()
-	dash_node.texture = $Sprite.texture
-	dash_node.global_position = $Sprite.global_position
-	dash_node.global_scale = $Sprite.global_scale
-	dash_node.flip_h = $Sprite.flip_h
+	dash_node.texture = $AnimatedSprite.frames.get_frame($AnimatedSprite.animation, $AnimatedSprite.frame)
+	dash_node.global_position = $AnimatedSprite.global_position
+	dash_node.global_scale = $AnimatedSprite.global_scale
+	dash_node.flip_h = $AnimatedSprite.flip_h
 	get_parent().add_child(dash_node)
 
 func reset_dash():
