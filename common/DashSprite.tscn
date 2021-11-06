@@ -2,6 +2,5 @@
 
 [ext_resource path="res://common/DashSprite.gd" type="Script" id=1]
 
-
 [node name="DashSprite" type="Sprite"]
 script = ExtResource( 1 )

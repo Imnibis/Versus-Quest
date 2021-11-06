@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/placeholder.jpg-f03f1dd5824d7e359705c4e42b8d4117.stex"
+path="res://.import/placeholder.jpg-50e8a2959872c4486c568bb6f9cdbe2f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/charger/assets/placeholder.jpg"
-dest_files=[ "res://.import/placeholder.jpg-f03f1dd5824d7e359705c4e42b8d4117.stex" ]
+source_file="res://enemies/charger/placeholder.jpg"
+dest_files=[ "res://.import/placeholder.jpg-50e8a2959872c4486c568bb6f9cdbe2f.stex" ]
 
 [params]
 
