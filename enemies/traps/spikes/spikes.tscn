@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://enemies/traps/spikes/trap_spikes_anim_strip_7.png" type="Texture" id=1]
+[ext_resource path="res://enemies/traps/spikes/spikes.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.08283, 6.324 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6.31306, 3.13841 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 6.785, 5.38011 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 6.31307, 6.55995 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "default"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Collisions/CollisionLow:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collisions/CollisionMiddle:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Collisions/CollisionHigh:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="spikes" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -0.23597 )
+texture = ExtResource( 1 )
+hframes = 6
+
+[node name="Detection" type="Area2D" parent="."]
+
+[node name="DetectionShape" type="CollisionShape2D" parent="Detection"]
+position = Vector2( 0.117981, 1.41581 )
+shape = SubResource( 1 )
+
+[node name="Collisions" type="Area2D" parent="."]
+
+[node name="CollisionLow" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( 0.235977, 4.01147 )
+shape = SubResource( 2 )
+disabled = true
+
+[node name="CollisionMiddle" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( -0.117981, 1.5338 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="CollisionHigh" type="CollisionShape2D" parent="Collisions"]
+position = Vector2( -0.23597, -1.41581 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/default = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
