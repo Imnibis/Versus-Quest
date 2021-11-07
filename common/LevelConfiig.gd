@@ -33,7 +33,7 @@ func _ready():
 	get_tree().paused = true
 	print(levelIfWin)
 	print(levelIfLose)
-	
+
 func player_won():
 	$Player.queue_free()
 	get_tree().change_scene(levelIfWin)

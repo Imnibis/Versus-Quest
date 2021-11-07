@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=2]
@@ -14,10 +14,10 @@
 [ext_resource path="res://enemies/charger/Charger.tscn" type="PackedScene" id=12]
 [ext_resource path="res://ui/common/UI.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/common/Props/Sword_in_rock.png" type="Texture" id=14]
-[ext_resource path="res://ui/common/CountDown.tscn" type="PackedScene" id=15]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 270.64, 10 )
+[ext_resource path="res://assets/common/Props/bigflowers_props.png" type="Texture" id=15]
+[ext_resource path="res://assets/common/Props/grass_props.png" type="Texture" id=16]
+[ext_resource path="res://assets/common/Props/flowers_props.png" type="Texture" id=17]
+[ext_resource path="res://assets/common/Props/drygrass_props.png" type="Texture" id=18]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 10 )
@@ -103,20 +103,42 @@ texture = ExtResource( 6 )
 
 [node name="UI" parent="." instance=ExtResource( 13 )]
 
-[node name="CountDown" parent="." instance=ExtResource( 15 )]
-margin_left = 240.0
-margin_top = 152.0
-margin_right = 240.0
-margin_bottom = 152.0
+[node name="Doodads" type="Node2D" parent="."]
 
-[node name="KillPlayer" type="Area2D" parent="." groups=[
-"damage",
-]]
-collision_layer = 2
-collision_mask = 2
+[node name="bigflowers_props" type="Sprite" parent="Doodads"]
+position = Vector2( 208.126, 236.047 )
+texture = ExtResource( 15 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlayer"]
-position = Vector2( 247.111, 320.611 )
-shape = SubResource( 1 )
+[node name="drygrass_props" type="Sprite" parent="Doodads"]
+position = Vector2( 310.098, 267.976 )
+texture = ExtResource( 18 )
+
+[node name="grass_props" type="Sprite" parent="Doodads"]
+position = Vector2( 390.912, 220.043 )
+texture = ExtResource( 16 )
+
+[node name="flowers_props" type="Sprite" parent="Doodads"]
+position = Vector2( 470.813, 172.047 )
+texture = ExtResource( 17 )
+
+[node name="grass_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 229.098, 140.007 )
+texture = ExtResource( 16 )
+
+[node name="drygrass_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 346.012, 124.011 )
+texture = ExtResource( 18 )
+
+[node name="grass_props3" type="Sprite" parent="Doodads"]
+position = Vector2( 47.9332, 252.042 )
+texture = ExtResource( 16 )
+
+[node name="bigflowers_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 188.645, 76.0209 )
+texture = ExtResource( 15 )
+
+[node name="grass_props" type="Sprite" parent="Doodads/bigflowers_props2"]
+position = Vector2( 87.3033, 16.0006 )
+texture = ExtResource( 16 )
 
 [editable path="EndFlag"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -13,10 +13,10 @@
 [ext_resource path="res://enemies/charger/Charger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://common/LevelConfiig.gd" type="Script" id=12]
 [ext_resource path="res://ui/common/UI.tscn" type="PackedScene" id=13]
-[ext_resource path="res://ui/common/CountDown.tscn" type="PackedScene" id=14]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 270.64, 10 )
+[ext_resource path="res://assets/common/Props/bigflowers_props.png" type="Texture" id=14]
+[ext_resource path="res://assets/common/Props/grass_props.png" type="Texture" id=15]
+[ext_resource path="res://assets/common/Props/flowers_props.png" type="Texture" id=16]
+[ext_resource path="res://assets/common/Props/drygrass_props.png" type="Texture" id=17]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource( 12 )
@@ -35,7 +35,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 
 [node name="bg_1" type="Sprite" parent="background"]
-position = Vector2( 239.874, 159.027 )
+position = Vector2( 239.378, 159.325 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -107,18 +107,33 @@ texture = ExtResource( 9 )
 
 [node name="UI" parent="." instance=ExtResource( 13 )]
 
-[node name="CountDown" parent="." instance=ExtResource( 14 )]
-margin_left = 250.99
-margin_top = 144.543
-margin_right = 250.99
-margin_bottom = 144.543
+[node name="Doodads" type="Node2D" parent="."]
+position = Vector2( -1, 0 )
 
-[node name="KillPlayer" type="Area2D" parent="." groups=[
-"damage",
-]]
-collision_layer = 2
-collision_mask = 2
+[node name="bigflowers_props" type="Sprite" parent="Doodads"]
+position = Vector2( 281.819, 44.1585 )
+texture = ExtResource( 14 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlayer"]
-position = Vector2( 241.167, 316.153 )
-shape = SubResource( 1 )
+[node name="flowers_props" type="Sprite" parent="Doodads"]
+position = Vector2( 332.625, 59.9923 )
+texture = ExtResource( 16 )
+
+[node name="grass_props" type="Sprite" parent="Doodads"]
+position = Vector2( 291.657, 188.031 )
+texture = ExtResource( 15 )
+
+[node name="grass_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 88.3298, 123.961 )
+texture = ExtResource( 15 )
+
+[node name="grass_props3" type="Sprite" parent="Doodads"]
+position = Vector2( 375.486, 155.983 )
+texture = ExtResource( 15 )
+
+[node name="flowers_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 186.5, 60 )
+texture = ExtResource( 16 )
+
+[node name="drygrass_props" type="Sprite" parent="Doodads"]
+position = Vector2( 440.128, 108.034 )
+texture = ExtResource( 17 )

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://ui/common/no_hearts_hud.png" type="Texture" id=1]
 [ext_resource path="res://ui/common/hearts_hud.png" type="Texture" id=2]
 [ext_resource path="res://ui/common/Retro Gaming.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ui/playerUI/UIhearts.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -19,6 +20,7 @@ margin_top = 5.26985
 margin_right = -1.81067
 margin_bottom = 5.26984
 rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
