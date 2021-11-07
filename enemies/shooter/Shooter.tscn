@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://enemies/shooter/Shooter_idle.png" type="Texture" id=1]
 [ext_resource path="res://enemies/shooter/Shooter.gd" type="Script" id=2]
@@ -40,7 +40,21 @@ extents = Vector2( 4.01268, 5.62152 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.2776, 5.81495 )
 
-[node name="Shooter" type="KinematicBody2D"]
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 70.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0.996078, 0.0509804, 0.0509804, 1 )
+
+[node name="Shooter" type="KinematicBody2D" groups=[
+"playable",
+]]
 script = ExtResource( 2 )
 projectile_object = ExtResource( 3 )
 projectile_speed = 80.0
@@ -56,7 +70,8 @@ position = Vector2( 0, 2.351 )
 shape = SubResource( 1 )
 
 [node name="TouchPlayer" type="Area2D" parent="." groups=[
-"damage",
+"damage_player",
+"playable",
 ]]
 position = Vector2( 0, 1.182 )
 collision_layer = 2
@@ -68,3 +83,20 @@ shape = SubResource( 2 )
 
 [node name="ShootAnimationTimer" type="Timer" parent="."]
 wait_time = 0.259
+
+[node name="DyingEffect" type="Particles2D" parent="."]
+emitting = false
+amount = 100
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 8 )
+
+[node name="DyingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DyingTimer2" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_shape_entered" from="TouchPlayer" to="." method="_on_TouchPlayer_area_shape_entered"]
+[connection signal="body_entered" from="TouchPlayer" to="." method="_on_TouchPlayer_body_entered"]
