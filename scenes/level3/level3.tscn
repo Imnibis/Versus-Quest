@@ -106,6 +106,7 @@ scale = Vector2( 2.33615, 2.75471 )
 texture = ExtResource( 6 )
 
 [node name="UI" parent="." instance=ExtResource( 13 )]
+playerHearts = 3
 
 [node name="Doodads" type="Node2D" parent="."]
 

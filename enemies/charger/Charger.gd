@@ -19,6 +19,7 @@ var can_dash = true
 var time = 0
 var last_ghost = 0
 var velocity = Vector2(0, 0)
+var dead = false
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -27,17 +28,19 @@ var velocity = Vector2(0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$DyingTimer.connect("timeout", self, "free")
+	$DyingTimer2.connect("timeout", self, "disappear")
 	$AnimatedSprite.play("Idle")
 	$DashCooldown.connect("timeout", self, "reset_dash")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event):
-	if event.is_action_pressed("p2_action") and can_dash:
+	if event.is_action_pressed("p2_action") and can_dash and not dead:
 		dash()
 
 func _physics_process(delta):
 	time += delta
-	if not dashing:
+	if not dashing and not dead:
 		if can_dash:
 			$DashEnable.emitting = true
 		var movement_x = Input.get_action_strength("p2_right") - Input.get_action_strength("p2_left")
@@ -88,3 +91,29 @@ func spawn_ghost():
 
 func reset_dash():
 	can_dash = true
+
+func death():
+	velocity = Vector2.ZERO
+	dead = true
+	$AnimatedSprite.modulate = Color(255, 255, 255, 1)
+	# play death animation
+	$TouchPlayer.queue_free()
+	$DyingEffect.emitting = true
+	$DyingTimer2.start(0.1)
+	$DyingTimer.start(1)
+	$DashEnable.hide()
+	$DashParticules.hide()
+
+func disappear():
+	$AnimatedSprite.hide()
+
+func free():
+	queue_free()
+
+func _on_TouchPlayer_area_shape_entered(area_id, area, area_shape, local_shape):
+	if area.is_in_group("damage"):
+		death()
+
+func _on_TouchPlayer_body_entered(body):
+	if body.is_in_group("damage"):
+		death()

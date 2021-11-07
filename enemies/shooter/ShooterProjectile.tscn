@@ -25,10 +25,13 @@ extents = Vector2( 1, 1 )
 [node name="ShooterProjectile" type="Area2D" groups=[
 "damage",
 ]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="RightCollision" type="CollisionShape2D" parent="."]
@@ -42,3 +45,5 @@ shape = SubResource( 1 )
 
 [node name="Timeout" type="Timer" parent="."]
 wait_time = 10.0
+
+[connection signal="area_entered" from="." to="." method="_on_ShooterProjectile_area_entered"]

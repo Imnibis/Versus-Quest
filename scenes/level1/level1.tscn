@@ -77,9 +77,7 @@ position = Vector2( 146.821, 237.11 )
 [node name="spikes" parent="Traps" instance=ExtResource( 7 )]
 position = Vector2( 281.082, 185.827 )
 
-[node name="Floor" type="TileMap" parent="." groups=[
-"floor",
-]]
+[node name="Floor" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
@@ -110,6 +108,8 @@ scale = Vector2( 2.33615, 2.75471 )
 texture = ExtResource( 6 )
 
 [node name="UI" parent="." instance=ExtResource( 14 )]
+playerHearts = 3
+enemiesHearts = 2
 
 [node name="Doodads" type="Node2D" parent="."]
 

@@ -86,7 +86,10 @@ position = Vector2( 14.4504, 116.401 )
 
 [node name="foreground" type="Node2D" parent="."]
 
-[node name="UI" parent="." instance=ExtResource( 10 )]
+[node name="UI" parent="." groups=[
+"ui",
+] instance=ExtResource( 10 )]
+enemiesHearts = 3
 
 [node name="fg_0" type="Sprite" parent="."]
 modulate = Color( 10, 1, 0, 1 )

@@ -5,5 +5,5 @@ func changeHearts(currentLife : int):
 		$FullHearts.rect_size.x -= 16
 	elif (currentLife == 1):
 		$FullHearts.rect_size.x -= 32
-	elif (currentLife == 0):
+	elif (currentLife <= 0):
 		$FullHearts.rect_size.x -= 48
