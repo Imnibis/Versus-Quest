@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -11,8 +11,10 @@
 [ext_resource path="res://assets/common/background-foreground/fg_0.png" type="Texture" id=9]
 [ext_resource path="res://enemies/jumper/Jumper.tscn" type="PackedScene" id=10]
 [ext_resource path="res://enemies/charger/Charger.tscn" type="PackedScene" id=11]
+[ext_resource path="res://common/LevelConfiig.gd" type="Script" id=12]
 
-[node name="Level1" type="Node2D"]
+[node name="Level0" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 1, 0.945098, 0.835294, 1 )

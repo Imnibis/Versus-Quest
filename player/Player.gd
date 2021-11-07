@@ -24,6 +24,9 @@ var falling : bool = false
 var jumping : bool = false
 var is_dead : bool = false
 
+signal win
+signal dead
+
 func _ready():
 	$DashTimer.connect("timeout", self, "dash_timer_timeout")
 	$DashAgain.connect("timeout", self, "can_dash_again")
@@ -120,6 +123,7 @@ func white_color():
 	$AnimatedSprite.hide()
 
 func player_dead():
+	emit_signal("dead")	
 	self.queue_free()
 
 ########## DASH FUNCTION
@@ -168,6 +172,8 @@ func handle_dash(delta):
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
 	if area.is_in_group("win"):
 		PlayerVar.has_win = true
+		print("win")
+		emit_signal("win")
 	if area.is_in_group("damage"):
 		death()
 		PlayerVar.is_dead = true
