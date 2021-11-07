@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://enemies/traps/spikes/spikes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://enemies/traps/arrow_trap/Lever.tscn" type="PackedScene" id=13]
 [ext_resource path="res://enemies/traps/arrow_trap/arrow_trap.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/common/Props/drygrass_props.png" type="Texture" id=15]
 
 [node name="Level-1" type="Node2D"]
 script = ExtResource( 7 )
@@ -93,3 +94,25 @@ scale = Vector2( 2.32591, 2.52234 )
 texture = ExtResource( 8 )
 
 [node name="UI" parent="." instance=ExtResource( 10 )]
+
+[node name="Doodads" type="Node2D" parent="."]
+
+[node name="drygrass_props" type="Sprite" parent="Doodads"]
+position = Vector2( 264.25, 188.125 )
+texture = ExtResource( 15 )
+
+[node name="drygrass_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 115.9, 235.99 )
+texture = ExtResource( 15 )
+
+[node name="drygrass_props3" type="Sprite" parent="Doodads"]
+position = Vector2( 153.833, 107.854 )
+texture = ExtResource( 15 )
+
+[node name="drygrass_props4" type="Sprite" parent="Doodads"]
+position = Vector2( 419.856, 123.969 )
+texture = ExtResource( 15 )
+
+[node name="drygrass_props5" type="Sprite" parent="Doodads"]
+position = Vector2( 295.157, 59.9498 )
+texture = ExtResource( 15 )
