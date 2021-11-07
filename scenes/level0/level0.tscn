@@ -25,6 +25,9 @@ script = ExtResource( 12 )
 color = Color( 1, 0.945098, 0.835294, 1 )
 
 [node name="background" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="bg_0" type="Sprite" parent="background"]
 position = Vector2( 240.755, 159.061 )
@@ -35,11 +38,17 @@ texture = ExtResource( 4 )
 position = Vector2( 239.378, 159.325 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="bg_2" type="Sprite" parent="background"]
 position = Vector2( 239.874, 159.342 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="background/bg_2"]
 position = Vector2( -132.025, -69.6303 )
