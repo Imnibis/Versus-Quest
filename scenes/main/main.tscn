@@ -5,7 +5,7 @@
 [ext_resource path="res://enemies/traps/spikes/spikes.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemies/charger/Charger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://common/EndFlag.tscn" type="PackedScene" id=5]
-[ext_resource path="res://enemies/traps/arrow_trap/arrow_trap_right.tscn" type="PackedScene" id=6]
+[ext_resource path="res://enemies/traps/arrow_trap/arrow_trap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://enemies/jumper/Jumper.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
