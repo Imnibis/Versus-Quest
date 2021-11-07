@@ -82,7 +82,8 @@ color = Color( 0.996078, 0.0509804, 0.0509804, 1 )
 "playable",
 ]]
 script = ExtResource( 2 )
-GRAVITY = 15.0
+GRAVITY = 10.0
+JUMP_FORCE = 200.0
 RISING_MIDDLE_JUMP_THRESHHOLD = 70.0
 FALLING_MIDDLE_JUMP_THRESHHOLD = 50.0
 
@@ -95,7 +96,6 @@ texture = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 10 )
 animation = "Jump"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
