@@ -172,13 +172,12 @@ func handle_dash(delta):
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, local_shape):
 	if area.is_in_group("win"):
 		PlayerVar.has_win = true
-		print("win")
 		emit_signal("win")
 	if area.is_in_group("damage"):
 		death()
 		PlayerVar.is_dead = true
 
-
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("damage"):
 		death()
+		PlayerVar.is_dead = true
