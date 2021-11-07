@@ -105,7 +105,8 @@ func next_scene(scene):
 
 
 func _on_timer_timeout():
-	load_state();"
+	load_state();
+"
 
 [sub_resource type="Animation" id=2]
 length = 0.4
@@ -586,7 +587,6 @@ anims/Right-Left = SubResource( 12 )
 anims/Top-down = SubResource( 13 )
 
 [node name="canvas" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="cutoff" type="ColorRect" parent="canvas"]
 material = SubResource( 14 )
@@ -608,4 +608,5 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="timer" type="Timer" parent="."]
 one_shot = true
+
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
