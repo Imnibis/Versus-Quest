@@ -38,6 +38,8 @@ func _input(event):
 func _physics_process(delta):
 	time += delta
 	if not dashing:
+		if can_dash:
+			$DashEnable.emitting = true
 		var movement_x = Input.get_action_strength("p2_right") - Input.get_action_strength("p2_left")
 		direction = -1 if movement_x < 0 else (1 if movement_x > 0 else direction)
 		$AnimatedSprite.flip_h = direction == 1
@@ -60,6 +62,8 @@ func dash():
 	last_ghost = 0
 	dashing = true
 	can_dash = false
+	$DashEnable.emitting = false
+	$DashParticules.emitting = true
 	$AnimatedSprite.play("Dash")
 	var original_position = position
 	var end_position = original_position + Vector2(dash_distance * direction, 0)
@@ -69,6 +73,7 @@ func dash():
 			last_ghost = time
 		move_and_slide(original_position.cubic_interpolate(end_position, original_position + Vector2(dash_animation_smoothing, 0),  end_position + Vector2(dash_animation_smoothing, 0), time / dash_duration) - position)
 		yield(get_tree(), "idle_frame")
+	$DashParticules.emitting = false
 	move_and_slide(end_position - position)
 	$DashCooldown.start(dash_cooldown)
 	dashing = false
