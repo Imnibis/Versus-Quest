@@ -30,6 +30,7 @@ func _ready():
 	$Player.connect("win", self, "player_won")
 	$Player.connect("dead", self, "player_dead")
 	$CountDown.connect("count_finish", self, "finish")
+	BackGroundMusicVar.start_music()
 	get_tree().paused = true
 	print(levelIfWin)
 	print(levelIfLose)

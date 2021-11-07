@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hero Immortal.mp3-7c8d910e50da359964636d4ab8c24c45.mp3str"
+
+[deps]
+
+source_file="res://assets/Music/Hero Immortal.mp3"
+dest_files=[ "res://.import/Hero Immortal.mp3-7c8d910e50da359964636d4ab8c24c45.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
