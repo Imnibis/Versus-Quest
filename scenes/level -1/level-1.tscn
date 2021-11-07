@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://enemies/traps/arrow_trap/arrow_trap.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/common/Props/drygrass_props.png" type="Texture" id=15]
 [ext_resource path="res://ui/common/CountDown.tscn" type="PackedScene" id=16]
+[ext_resource path="res://enemies/shooter/Shooter.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 255.365, 10 )
@@ -82,6 +83,9 @@ position = Vector2( 313.511, 57.0836 )
 
 [node name="Jumper" parent="." instance=ExtResource( 11 )]
 position = Vector2( 457.099, 102.031 )
+
+[node name="Shooter" parent="." instance=ExtResource( 17 )]
+position = Vector2( 190.786, 167.998 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 223.9, 75.3712 )

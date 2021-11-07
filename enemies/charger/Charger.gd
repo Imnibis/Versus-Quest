@@ -68,6 +68,7 @@ func dash():
 	$DashEnable.emitting = false
 	$DashParticules.emitting = true
 	$AnimatedSprite.play("Dash")
+	$DashSound.play()
 	var original_position = position
 	var end_position = original_position + Vector2(dash_distance * direction, 0)
 	while time < dash_duration:

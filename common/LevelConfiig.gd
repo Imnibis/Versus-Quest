@@ -37,7 +37,9 @@ func _ready():
 
 func player_won():
 	$Player.queue_free()
-	get_tree().change_scene(levelIfWin)
+	TransitionsAl.new_scene_dir = levelIfWin
+	TransitionsAl.load_state()
+	#get_tree().change_scene(levelIfWin)
 
 func player_dead():
 	get_tree().change_scene(levelIfLose)

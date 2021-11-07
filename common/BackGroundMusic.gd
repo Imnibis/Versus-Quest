@@ -11,3 +11,13 @@ func stop_music():
 	if is_playing:
 		is_playing = false
 		$Music.stop
+		
+func pause_music():
+	if is_playing:
+		$Music.playing = false
+		is_playing = false
+
+func resume_music():
+	if !is_playing:
+		$Music.playing = true
+		is_playing = true

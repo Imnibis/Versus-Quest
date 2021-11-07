@@ -80,8 +80,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_pressed("jump"):
 			velocity.y = -JUMP_FORCE
-
-	
+			$JumpSound.play()
 
 	handle_dash(delta)
 	handle_jump()
@@ -97,7 +96,6 @@ func handle_jump():
 			velocity.y += GRAVITY
 		if is_on_floor():
 			velocity.y = -JUMP_FORCE
-			$JumpSound.play()			
 	else:
 		velocity.y += GRAVITY * LOW_JUMP_MULTIPLIER
 
@@ -155,7 +153,8 @@ func handle_dash(delta):
 		dash_direction = get_direction_from_input()
 		$DashTimer.start(DASH_LENGTH)
 		$DashAgain.start(NO_DASH)
-		$DashEnable.emitting = false 
+		$DashEnable.emitting = false
+		$DashSound.play()
 		
 	if is_dashing:
 		$AnimatedSprite.play("Dash")

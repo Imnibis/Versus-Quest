@@ -9,8 +9,8 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://scenes/level0/level0.tscn")
-	pass
+	TransitionsAl.new_scene_dir = "res://scenes/level0/level0.tscn"
+	TransitionsAl.load_state()
 	
 func _on_OptionButton_pressed():
 	pass # Replace with function body.

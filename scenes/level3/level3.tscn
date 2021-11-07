@@ -98,7 +98,7 @@ position = Vector2( 18.7631, 260.718 )
 [node name="foreground" type="Node2D" parent="."]
 
 [node name="Waterfall" parent="foreground" instance=ExtResource( 8 )]
-position = Vector2( 85.6084, 14.379 )
+position = Vector2( 85.1913, 15.9641 )
 
 [node name="fg_0" type="Sprite" parent="foreground"]
 position = Vector2( 248.901, 105.731 )

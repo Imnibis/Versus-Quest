@@ -16,6 +16,7 @@ _global_script_class_icons={
 
 config/name="Training Jam Game"
 config/description="UwU"
+run/main_scene="res://menus/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -23,6 +24,7 @@ config/icon="res://icon.png"
 PlayerVar="*res://common/PlayerVar.gd"
 BackGroundMusic="*res://common/BackGroundMusic.gd"
 BackGroundMusicVar="*res://common/BackGroundMusic.tscn"
+TransitionsAl="*res://autoload/TransitionsAL.tscn"
 
 [display]
 

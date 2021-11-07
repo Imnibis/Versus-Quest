@@ -118,4 +118,5 @@ one_shot = true
 
 [node name="SpikesSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+volume_db = -11.107
 attenuation = 0.116629
