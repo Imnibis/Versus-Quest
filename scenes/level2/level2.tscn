@@ -7,7 +7,7 @@
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/common/background-foreground/fg_0.png" type="Texture" id=6]
 [ext_resource path="res://enemies/traps/spikes/spikes.tscn" type="PackedScene" id=7]
-[ext_resource path="res://enemies/traps/arrow_trap/arrow_trap_right.tscn" type="PackedScene" id=8]
+[ext_resource path="res://enemies/traps/arrow_trap/arrow_trap.tscn" type="PackedScene" id=8]
 [ext_resource path="res://common/EndFlag.tscn" type="PackedScene" id=9]
 [ext_resource path="res://enemies/traps/arrow_trap/Lever.tscn" type="PackedScene" id=10]
 [ext_resource path="res://enemies/jumper/Jumper.tscn" type="PackedScene" id=11]
@@ -61,15 +61,11 @@ position = Vector2( 414.104, 281.86 )
 ] instance=ExtResource( 7 )]
 position = Vector2( 266.435, 186.658 )
 
-[node name="Arrow_trap_right" parent="Traps" groups=[
-"arrow",
-] instance=ExtResource( 8 )]
+[node name="Arrow_trap_right" parent="Traps" instance=ExtResource( 8 )]
 position = Vector2( 41.9662, 279.526 )
 direction = "LEFT"
 
-[node name="Arrow_trap_right2" parent="Traps" groups=[
-"arrow",
-] instance=ExtResource( 8 )]
+[node name="Arrow_trap_right2" parent="Traps" instance=ExtResource( 8 )]
 position = Vector2( 473.331, 169.966 )
 direction = "RIGHT"
 

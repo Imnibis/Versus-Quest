@@ -1,10 +1,6 @@
 extends Area2D
 
 var speed = 0
-enum DIRECTION{
-	LEFT = -500
-	RIGHT = 500
-}
 
 func _ready():
 	connect("body_entered", self, "on_Arrow_body_entered")

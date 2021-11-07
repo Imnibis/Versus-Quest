@@ -1,0 +1,153 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/common/Props/waterfall_anim_strip_4.png" type="Texture" id=1]
+[ext_resource path="res://assets/common/Props/waterfall_bottom_anim_strip_4.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 34
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 34
+atlas = ExtResource( 1 )
+region = Rect2( 16, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 34
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 34
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 24 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 8 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Waterfall" type="Node2D"]
+position = Vector2( 31.0803, 13.6992 )
+scale = Vector2( 1, 1.13228 )
+
+[node name="Waterfall" type="AnimatedSprite" parent="."]
+position = Vector2( -0.0537376, -0.995109 )
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+playing = true
+
+[node name="Waterfall2" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 46 )
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+playing = true
+
+[node name="Waterfall3" type="AnimatedSprite" parent="."]
+position = Vector2( -0.0113716, 69.9317 )
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="Waterfall4" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+offset = Vector2( 0, 92 )
+
+[node name="Waterfall5" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+offset = Vector2( 0, 115 )
+
+[node name="Waterfall6" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+offset = Vector2( 0, 138 )
+
+[node name="Waterfall7" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+offset = Vector2( 0, 162 )
+
+[node name="Waterfall8" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 0.956605 )
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+offset = Vector2( 0, 185 )
+
+[node name="Waterfall9" type="AnimatedSprite" parent="."]
+position = Vector2( 0.148651, -0.131285 )
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+offset = Vector2( 0, 208 )
+
+[node name="Waterfall10" type="AnimatedSprite" parent="."]
+position = Vector2( 0.0936508, 0.745445 )
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+offset = Vector2( 0, 231 )
+
+[node name="Waterfall11" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 23 )
+scale = Vector2( 1.5, 1 )
+frames = SubResource( 5 )
+frame = 3
+playing = true
+
+[node name="Waterfall12" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 48.979 )
+scale = Vector2( 1.5, 0.797607 )
+frames = SubResource( 5 )
+frame = 2
+playing = true
+offset = Vector2( 0, 254 )
+
+[node name="WaterfallBottom" type="AnimatedSprite" parent="."]
+position = Vector2( 0.705635, 246.481 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 10 )
+frame = 2
+playing = true
