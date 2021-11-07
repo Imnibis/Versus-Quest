@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hearts_hud.png-17457f84f1cb7d0393977312583f86f8.stex"
+path="res://.import/coins_hud.png-1e96b359625dc0b8c36def4de858263d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/default/hearts_hud.png"
-dest_files=[ "res://.import/hearts_hud.png-17457f84f1cb7d0393977312583f86f8.stex" ]
+source_file="res://ui/common/coins_hud.png"
+dest_files=[ "res://.import/coins_hud.png-1e96b359625dc0b8c36def4de858263d.stex" ]
 
 [params]
 

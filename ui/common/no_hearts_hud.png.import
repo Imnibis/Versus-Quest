@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/coins_hud.png-1fb64b6d1574891f64c37c68da0689f2.stex"
+path="res://.import/no_hearts_hud.png-e794c3e91ad4963dd99aa88a7f681e79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/default/coins_hud.png"
-dest_files=[ "res://.import/coins_hud.png-1fb64b6d1574891f64c37c68da0689f2.stex" ]
+source_file="res://ui/common/no_hearts_hud.png"
+dest_files=[ "res://.import/no_hearts_hud.png-e794c3e91ad4963dd99aa88a7f681e79.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

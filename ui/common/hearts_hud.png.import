@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/no_hearts_hud.png-423c0c675c95f2c665f7f5f35ac8bb58.stex"
+path="res://.import/hearts_hud.png-9c86ef3d2f0b08ac0a0d04a2475d6344.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/default/no_hearts_hud.png"
-dest_files=[ "res://.import/no_hearts_hud.png-423c0c675c95f2c665f7f5f35ac8bb58.stex" ]
+source_file="res://ui/common/hearts_hud.png"
+dest_files=[ "res://.import/hearts_hud.png-9c86ef3d2f0b08ac0a0d04a2475d6344.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

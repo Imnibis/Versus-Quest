@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://common/LevelConfiig.gd" type="Script" id=7]
 [ext_resource path="res://assets/common/Props/Waterfall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/common/background-foreground/fg_0.png" type="Texture" id=9]
+[ext_resource path="res://ui/common/UI.tscn" type="PackedScene" id=10]
 
 [node name="Level-1" type="Node2D"]
 script = ExtResource( 7 )
@@ -69,3 +70,5 @@ position = Vector2( 222.77, 241.612 )
 position = Vector2( 247.512, 103.505 )
 scale = Vector2( 2.33615, 2.75471 )
 texture = ExtResource( 9 )
+
+[node name="UI" parent="." instance=ExtResource( 10 )]

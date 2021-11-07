@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://enemies/jumper/Jumper.tscn" type="PackedScene" id=10]
 [ext_resource path="res://enemies/charger/Charger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://common/LevelConfiig.gd" type="Script" id=12]
+[ext_resource path="res://ui/common/UI.tscn" type="PackedScene" id=13]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource( 12 )
@@ -78,7 +79,6 @@ position = Vector2( 347.241, 48.424 )
 
 [node name="charger" parent="." instance=ExtResource( 11 )]
 position = Vector2( 349.932, 152.699 )
-scale = Vector2( 2, 2 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 62.2703, 122.612 )
@@ -91,3 +91,5 @@ position = Vector2( 62.2703, 122.612 )
 position = Vector2( 247.512, 103.505 )
 scale = Vector2( 2.33615, 2.75471 )
 texture = ExtResource( 9 )
+
+[node name="UI" parent="." instance=ExtResource( 13 )]
