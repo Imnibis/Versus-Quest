@@ -6,7 +6,6 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
-outline_color = Color( 0.964706, 0.941176, 0.196078, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=2]
@@ -25,20 +24,25 @@ __meta__ = {
 }
 
 [node name="EmptyHearts" type="TextureRect" parent="."]
-margin_left = 579.569
-margin_top = 45.9277
-margin_right = 628.569
-margin_bottom = 62.9278
+margin_left = 319.327
+margin_top = 7.07772
+margin_right = 368.327
+margin_bottom = 24.0778
+rect_scale = Vector2( 0.7, 0.7 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FullHearts" type="TextureRect" parent="."]
-margin_left = 579.569
-margin_top = 45.9277
-margin_right = 627.569
-margin_bottom = 61.9278
+margin_left = 319.327
+margin_top = 7.07772
+margin_right = 367.327
+margin_bottom = 23.0778
+rect_scale = Vector2( 0.7, 0.7 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
@@ -46,10 +50,14 @@ expand = true
 stretch_mode = 2
 
 [node name="Monstersabel" type="RichTextLabel" parent="."]
-margin_left = 591.465
-margin_top = 10.3081
-margin_right = 733.465
-margin_bottom = 53.3081
+margin_left = 361.241
+margin_top = 0.286137
+margin_right = 503.241
+margin_bottom = 43.2861
+rect_scale = Vector2( 0.5, 0.5 )
 theme = SubResource( 2 )
 custom_colors/default_color = Color( 1, 0.0117647, 0.0117647, 1 )
 text = "Fiends"
+__meta__ = {
+"_edit_use_anchors_": false
+}

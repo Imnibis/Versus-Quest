@@ -5,26 +5,16 @@
 
 [node name="UI" type="CanvasLayer"]
 
-[node name="PlayerUI" type="Control" parent="." instance=ExtResource( 1 )]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1.06067
-margin_top = 5.48008
-margin_right = -1.06067
-margin_bottom = 5.4801
-rect_scale = Vector2( 0.7, 0.7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PlayerUI" parent="." instance=ExtResource( 1 )]
+margin_left = -47.3185
+margin_top = 0.0
+margin_right = -47.3185
+margin_bottom = 0.0
+rect_scale = Vector2( 1, 1 )
 
-[node name="EnemyUI" type="Control" parent="." instance=ExtResource( 2 )]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1.06067
-margin_top = 5.48008
-margin_right = -1.06067
-margin_bottom = 5.4801
-rect_scale = Vector2( 0.7, 0.7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="EnemyUI" parent="." instance=ExtResource( 2 )]
+margin_left = -48.0
+margin_top = 0.13342
+margin_right = -48.0
+margin_bottom = 0.133423
+rect_scale = Vector2( 1, 1 )

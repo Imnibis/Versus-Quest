@@ -33,6 +33,7 @@ func _ready():
 	print(levelIfLose)
 	
 func player_won():
+	$Player.queue_free()
 	get_tree().change_scene(levelIfWin)
 
 func player_dead():
