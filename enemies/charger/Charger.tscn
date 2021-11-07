@@ -42,14 +42,14 @@ animations = [ {
 "name": "Walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -120,10 +120,10 @@ acceleration = 10.0
 max_fall_speed = 200.0
 gravity = 20.0
 dash_duration = 0.2
-dash_distance = 700.0
+dash_distance = 400.0
 dash_animation_smoothing = 300.0
 dash_ghost_frequency = 0.03
-dash_cooldown = 0.5
+dash_cooldown = 3.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -8 )
@@ -135,7 +135,7 @@ position = Vector2( 0, -5 )
 shape = SubResource( 9 )
 
 [node name="DashCooldown" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="DashParticules" type="Particles2D" parent="."]
 position = Vector2( 0.143, -5.389 )
