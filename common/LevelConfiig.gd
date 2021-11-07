@@ -29,6 +29,8 @@ func _ready():
 			levelIfLose = "res://scenes/level2/level2.tscn"
 	$Player.connect("win", self, "player_won")
 	$Player.connect("dead", self, "player_dead")
+	$CountDown.connect("count_finish", self, "finish")
+	get_tree().paused = true
 	print(levelIfWin)
 	print(levelIfLose)
 	
@@ -38,3 +40,6 @@ func player_won():
 
 func player_dead():
 	get_tree().change_scene(levelIfLose)
+	
+func finish():
+	get_tree().paused = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=2]
@@ -14,6 +14,10 @@
 [ext_resource path="res://enemies/charger/Charger.tscn" type="PackedScene" id=12]
 [ext_resource path="res://common/LevelConfiig.gd" type="Script" id=13]
 [ext_resource path="res://ui/common/UI.tscn" type="PackedScene" id=14]
+[ext_resource path="res://ui/common/CountDown.tscn" type="PackedScene" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 270.64, 10 )
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 13 )
@@ -102,3 +106,19 @@ scale = Vector2( 2.33615, 2.75471 )
 texture = ExtResource( 6 )
 
 [node name="UI" parent="." instance=ExtResource( 14 )]
+
+[node name="CountDown" parent="." instance=ExtResource( 15 )]
+margin_left = 258.431
+margin_top = 147.033
+margin_right = 258.431
+margin_bottom = 147.033
+
+[node name="KillPlayer" type="Area2D" parent="." groups=[
+"damage",
+]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillPlayer"]
+position = Vector2( 240.87, 318.531 )
+shape = SubResource( 1 )
