@@ -9,11 +9,13 @@ export (String, "LEFT", "RIGHT") var direction = "RIGHT"
 export (float) var projectile_offset = 1
 export (float) var projectile_speed = 50
 var dead = false
+var can_shoot = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$DyingTimer.connect("timeout", self, "free")
 	$DyingTimer2.connect("timeout", self, "disappear")
+	$ShootCooldown.connect("timeout", self, "end_cooldown")
 	$ShootAnimationTimer.connect("timeout", self, "end_shoot_animation")
 	$AnimatedSprite.play("Idle")
 
@@ -24,13 +26,18 @@ func _input(event):
 		direction = "RIGHT"
 	elif event.is_action_pressed("p2_left"):
 		direction = "LEFT"
-	if event.is_action_pressed("p2_action"):
+	if event.is_action_pressed("p2_action") and can_shoot:
 		$AnimatedSprite.play("Shoot")
 		$ShootAnimationTimer.start()
+		$ShootCooldown.start()
+		can_shoot = false
 		spawn_projectile()
 
 func end_shoot_animation():
 	$AnimatedSprite.play("Idle")
+
+func end_cooldown():
+	can_shoot = true
 
 func spawn_projectile():
 	var projectile = projectile_object.instance()

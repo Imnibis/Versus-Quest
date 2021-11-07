@@ -9,7 +9,7 @@ func _ready():
 	$VBoxContainer/StartButton.grab_focus()
 
 func _on_StartButton_pressed():
-	#get_tree().change_scene()
+	get_tree().change_scene("res://scenes/level0/level0.tscn")
 	pass
 	
 func _on_OptionButton_pressed():

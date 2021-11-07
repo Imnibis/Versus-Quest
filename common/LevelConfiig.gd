@@ -40,6 +40,6 @@ func player_won():
 
 func player_dead():
 	get_tree().change_scene(levelIfLose)
-	
+
 func finish():
 	get_tree().paused = false
