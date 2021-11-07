@@ -114,7 +114,7 @@ extents = Vector2( 7, 7.5 )
 [sub_resource type="Curve" id=21]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.11591, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=22]
+[sub_resource type="CurveTexture" id=48]
 curve = SubResource( 21 )
 
 [sub_resource type="ParticlesMaterial" id=23]
@@ -128,12 +128,12 @@ initial_velocity = 19.0
 angular_velocity = -180.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 22 )
+scale_curve = SubResource( 48 )
 
 [sub_resource type="Curve" id=24]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.75578, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=25]
+[sub_resource type="CurveTexture" id=49]
 curve = SubResource( 24 )
 
 [sub_resource type="ParticlesMaterial" id=26]
@@ -148,7 +148,7 @@ angular_velocity = 10.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.5
-scale_curve = SubResource( 25 )
+scale_curve = SubResource( 49 )
 
 [sub_resource type="ParticlesMaterial" id=47]
 emission_shape = 1
@@ -174,7 +174,7 @@ START_POSITION = " RIGHT"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 45 )
 animation = "Jump"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

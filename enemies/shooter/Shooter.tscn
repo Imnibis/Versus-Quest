@@ -5,40 +5,40 @@
 [ext_resource path="res://enemies/shooter/ShooterProjectile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemies/shooter/Shooter_shoot.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 12 ) ],
 "loop": true,
 "name": "Shoot",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 4.01268, 5.62152 )
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 3, 5 )
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 4.2776, 5.81495 )
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 3.19027, 5.24044 )
 
 [sub_resource type="ParticlesMaterial" id=8]
 emission_shape = 1
@@ -60,26 +60,24 @@ projectile_object = ExtResource( 3 )
 projectile_speed = 80.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
-animation = "Idle"
-frame = 1
+frames = SubResource( 13 )
+animation = "Shoot"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2.351 )
-shape = SubResource( 6 )
+position = Vector2( 0, 3 )
+shape = SubResource( 14 )
 
 [node name="TouchPlayer" type="Area2D" parent="." groups=[
 "damage_player",
 "playable",
 ]]
-position = Vector2( 0, 1.182 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchPlayer"]
-position = Vector2( 0.05, 1.006 )
-shape = SubResource( 7 )
+position = Vector2( 0, 3 )
+shape = SubResource( 15 )
 
 [node name="ShootAnimationTimer" type="Timer" parent="."]
 wait_time = 0.259
