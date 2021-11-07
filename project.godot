@@ -21,6 +21,8 @@ config/icon="res://icon.png"
 [autoload]
 
 PlayerVar="*res://common/PlayerVar.gd"
+BackGroundMusic="*res://common/BackGroundMusic.gd"
+BackGroundMusicVar="*res://common/BackGroundMusic.tscn"
 
 [display]
 

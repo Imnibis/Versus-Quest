@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bruh.mp3-90d752d8c39dfac8babfbcff0706990d.mp3str"
+
+[deps]
+
+source_file="res://assets/common/Audio/bruh.mp3"
+dest_files=[ "res://.import/bruh.mp3-90d752d8c39dfac8babfbcff0706990d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

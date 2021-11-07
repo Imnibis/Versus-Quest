@@ -97,6 +97,7 @@ func handle_jump():
 			velocity.y += GRAVITY
 		if is_on_floor():
 			velocity.y = -JUMP_FORCE
+			$JumpSound.play()			
 	else:
 		velocity.y += GRAVITY * LOW_JUMP_MULTIPLIER
 
@@ -118,6 +119,7 @@ func death():
 	$DyingTimer.start(1)
 	$DashEnable.hide()
 	$DashParticules.hide()
+	$DeathSound.play()
 
 func white_color():
 	$AnimatedSprite.hide()

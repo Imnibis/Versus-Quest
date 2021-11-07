@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://enemies/traps/arrow_trap/Lever.tscn" type="PackedScene" id=13]
 [ext_resource path="res://enemies/traps/arrow_trap/arrow_trap.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/common/Props/drygrass_props.png" type="Texture" id=15]
+[ext_resource path="res://ui/common/CountDown.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 255.365, 10 )
 
 [node name="Level-1" type="Node2D"]
 script = ExtResource( 7 )
@@ -117,3 +121,20 @@ texture = ExtResource( 15 )
 [node name="drygrass_props5" type="Sprite" parent="Doodads"]
 position = Vector2( 295.157, 59.9498 )
 texture = ExtResource( 15 )
+
+[node name="CountDown" parent="." instance=ExtResource( 16 )]
+margin_left = 246.24
+margin_top = 164.958
+margin_right = 246.24
+margin_bottom = 164.958
+
+[node name="KillingWater" type="Area2D" parent="." groups=[
+"damage",
+"playable",
+]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillingWater"]
+position = Vector2( 238.571, 336.852 )
+shape = SubResource( 1 )

@@ -1,7 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menus/Menu.gd" type="Script" id=1]
 [ext_resource path="res://menus/background.png" type="Texture" id=2]
+
+[sub_resource type="Theme" id=1]
+MenuButton/colors/font_color = Color( 1, 1, 1, 1 )
+MenuButton/colors/font_color_disabled = Color( 1, 1, 1, 0.3 )
+MenuButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+MenuButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+MenuButton/constants/hseparation = 3
+MenuButton/fonts/font = null
+MenuButton/styles/disabled = null
+MenuButton/styles/focus = null
+MenuButton/styles/hover = null
+MenuButton/styles/normal = null
+MenuButton/styles/pressed = null
+
+[sub_resource type="Theme" id=2]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -23,6 +49,7 @@ margin_left = 32.0
 margin_top = -97.0
 margin_right = 117.0
 margin_bottom = -29.0
+theme = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -31,6 +58,7 @@ __meta__ = {
 margin_right = 85.0
 margin_bottom = 20.0
 focus_neighbour_top = NodePath("../ExitButton")
+theme = SubResource( 2 )
 text = "Start"
 align = 0
 
