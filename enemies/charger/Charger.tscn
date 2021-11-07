@@ -42,27 +42,27 @@ animations = [ {
 "name": "Walk",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 5, 5 )
 
-[sub_resource type="Curve" id=26]
+[sub_resource type="Curve" id=10]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.11591, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=22]
-curve = SubResource( 26 )
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
 
-[sub_resource type="ParticlesMaterial" id=27]
+[sub_resource type="ParticlesMaterial" id=12]
 emission_shape = 1
 emission_sphere_radius = 4.0
 flag_disable_z = true
@@ -73,15 +73,15 @@ initial_velocity = 19.0
 angular_velocity = -180.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 22 )
+scale_curve = SubResource( 11 )
 
-[sub_resource type="Curve" id=28]
+[sub_resource type="Curve" id=13]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -2.75578, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=25]
-curve = SubResource( 28 )
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 13 )
 
-[sub_resource type="ParticlesMaterial" id=29]
+[sub_resource type="ParticlesMaterial" id=15]
 emission_shape = 1
 emission_sphere_radius = 4.0
 flag_disable_z = true
@@ -93,9 +93,9 @@ angular_velocity = 10.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.5
-scale_curve = SubResource( 25 )
+scale_curve = SubResource( 14 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 5.57987, 5.59026 )
 
 [sub_resource type="ParticlesMaterial" id=17]
@@ -120,10 +120,10 @@ acceleration = 10.0
 max_fall_speed = 200.0
 gravity = 20.0
 dash_duration = 0.2
-dash_distance = 700.0
+dash_distance = 400.0
 dash_animation_smoothing = 300.0
 dash_ghost_frequency = 0.03
-dash_cooldown = 0.5
+dash_cooldown = 3.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -8 )
@@ -135,21 +135,21 @@ position = Vector2( 0, -5 )
 shape = SubResource( 9 )
 
 [node name="DashCooldown" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 
 [node name="DashParticules" type="Particles2D" parent="."]
 position = Vector2( 0.143, -5.389 )
 emitting = false
 amount = 80
 local_coords = false
-process_material = SubResource( 27 )
+process_material = SubResource( 12 )
 texture = ExtResource( 6 )
 
 [node name="DashEnable" type="Particles2D" parent="."]
 position = Vector2( 0.143, -5.389 )
 amount = 15
 lifetime = 0.6
-process_material = SubResource( 29 )
+process_material = SubResource( 15 )
 texture = ExtResource( 6 )
 
 [node name="TouchPlayer" type="Area2D" parent="." groups=[
@@ -161,7 +161,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchPlayer"]
 position = Vector2( 0.0468216, -4.91632 )
-shape = SubResource( 10 )
+shape = SubResource( 16 )
 
 [node name="DyingEffect" type="Particles2D" parent="."]
 emitting = false
