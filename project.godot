@@ -8,6 +8,11 @@
 
 config_version=4
 
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
 [application]
 
 config/name="Training Jam Game"
@@ -118,9 +123,9 @@ dash={
 
 [physics]
 
-common/enable_pause_aware_picking=true
 2d/cell_size=16
 2d/default_gravity=100
+common/enable_pause_aware_picking=true
 
 [rendering]
 

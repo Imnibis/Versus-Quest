@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=1]
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://enemies/jumper/Jumper.tscn" type="PackedScene" id=11]
 [ext_resource path="res://common/LevelConfiig.gd" type="Script" id=12]
 [ext_resource path="res://ui/common/UI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/common/Props/bigflowers_props.png" type="Texture" id=14]
+[ext_resource path="res://assets/common/Props/grass_props.png" type="Texture" id=15]
+[ext_resource path="res://assets/common/Props/flowers_props.png" type="Texture" id=16]
+[ext_resource path="res://assets/common/Props/drygrass_props.png" type="Texture" id=17]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource( 12 )
@@ -105,3 +109,41 @@ scale = Vector2( 2.39325, 1.40647 )
 texture = ExtResource( 6 )
 
 [node name="UI" parent="." instance=ExtResource( 13 )]
+
+[node name="Doodads" type="Node2D" parent="."]
+
+[node name="bigflowers_props" type="Sprite" parent="Doodads"]
+position = Vector2( 182.14, 188.065 )
+texture = ExtResource( 14 )
+
+[node name="drygrass_props" type="Sprite" parent="Doodads"]
+position = Vector2( 218.083, 284.014 )
+texture = ExtResource( 17 )
+
+[node name="grass_props" type="Sprite" parent="Doodads"]
+position = Vector2( 61.0399, 236.012 )
+texture = ExtResource( 15 )
+
+[node name="grass_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 302.206, 284.025 )
+texture = ExtResource( 15 )
+
+[node name="flowers_props" type="Sprite" parent="Doodads"]
+position = Vector2( 456.071, 268.029 )
+texture = ExtResource( 16 )
+
+[node name="grass_props3" type="Sprite" parent="Doodads"]
+position = Vector2( 409.005, 188.03 )
+texture = ExtResource( 15 )
+
+[node name="bigflowers_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 383.199, 60.2601 )
+texture = ExtResource( 14 )
+
+[node name="drygrass_props2" type="Sprite" parent="Doodads"]
+position = Vector2( 422.988, 140.062 )
+texture = ExtResource( 17 )
+
+[node name="drygrass_props3" type="Sprite" parent="Doodads"]
+position = Vector2( 282.662, 188.024 )
+texture = ExtResource( 17 )
