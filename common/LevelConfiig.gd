@@ -32,8 +32,6 @@ func _ready():
 	$CountDown.connect("count_finish", self, "finish")
 	BackGroundMusicVar.start_music()
 	get_tree().paused = true
-	print(levelIfWin)
-	print(levelIfLose)
 
 func player_won():
 	$Player.queue_free()

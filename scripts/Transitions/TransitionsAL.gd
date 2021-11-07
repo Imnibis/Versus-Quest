@@ -42,7 +42,7 @@ var load_state: int = 0;
 func load_state() -> void:
 	match load_state:
 		0:
-			get_tree().paused = true;
+			#get_tree().paused = true;
 			if transitions_anim_names[select_transition] != "Pixelation":
 				$trans_anim.play(transitions_anim_names[select_transition]);
 			else:
@@ -67,7 +67,7 @@ func load_state() -> void:
 			load_state = 3;
 		3:
 			load_state = 0;
-			get_tree().paused = false;
+			#get_tree().paused = false;
 
 
 func last_scene(lvl):
