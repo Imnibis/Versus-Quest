@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://enemies/jumper/Jumper_idle.png" type="Texture" id=1]
 [ext_resource path="res://enemies/jumper/Jumper.gd" type="Script" id=2]
 [ext_resource path="res://enemies/jumper/placeholder.jpg" type="Texture" id=3]
 [ext_resource path="res://enemies/jumper/Jumper_walk.png" type="Texture" id=4]
+[ext_resource path="res://enemies/jumper/Jumper_jump.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 4 )
@@ -29,6 +30,18 @@ region = Rect2( 16, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
@@ -39,6 +52,11 @@ animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Jump",
 "speed": 5.0
 } ]
 
@@ -53,6 +71,8 @@ extents = Vector2( 5.8125, 6.4375 )
 ]]
 script = ExtResource( 2 )
 GRAVITY = 15.0
+RISING_MIDDLE_JUMP_THRESHHOLD = 70.0
+FALLING_MIDDLE_JUMP_THRESHHOLD = 50.0
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
@@ -62,7 +82,7 @@ texture = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
-animation = "Walk"
+animation = "Jump"
 frame = 2
 playing = true
 

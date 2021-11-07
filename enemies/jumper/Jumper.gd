@@ -9,6 +9,8 @@ export var FALL_MULTIPLIER = 2.5
 export var LOW_JUMP_MULTIPLIER = 3
 export var ACCELERATION = 10.0
 export var JUMP_FORCE = 300.0
+export var RISING_MIDDLE_JUMP_THRESHHOLD = 30.0
+export var FALLING_MIDDLE_JUMP_THRESHHOLD = 30.0
 
 var velocity : Vector2 = Vector2.ZERO
 var keep_direction : Vector2 = Vector2(-1, 0)
@@ -51,3 +53,18 @@ func handle_jump():
 			velocity.y = -JUMP_FORCE
 	else:
 		velocity.y += GRAVITY * LOW_JUMP_MULTIPLIER
+	if not is_on_floor():
+		$AnimatedSprite.stop()
+		$AnimatedSprite.set_animation("Jump")
+		var frame
+		if velocity.y >= 0:
+			if velocity.y <= RISING_MIDDLE_JUMP_THRESHHOLD:
+				frame = 1
+			else:
+				frame = 0
+		else:
+			if velocity.y >= FALLING_MIDDLE_JUMP_THRESHHOLD:
+				frame = 1
+			else:
+				frame = 2
+		$AnimatedSprite.set_frame(frame)
