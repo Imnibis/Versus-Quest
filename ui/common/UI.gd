@@ -6,3 +6,7 @@ export (int) var enemiesHearts
 func _ready():
 	$PlayerUI.changeHearts(playerHearts)
 	$EnemyUI.changeHearts(enemiesHearts)
+
+func changeHearts(pLoseHearts, eLoseHearts):
+	$PlayerUI.changeHearts(playerHearts - pLoseHearts)
+	$EnemyUI.changeHearts(enemiesHearts - eLoseHearts)
