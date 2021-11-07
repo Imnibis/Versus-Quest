@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/common/Tileset/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/common/background-foreground/bg_1.png" type="Texture" id=2]
@@ -14,6 +14,34 @@
 [ext_resource path="res://enemies/traps/spikes/spikes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://enemies/shooter/Shooter.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/common/Props/drygrass_props.png" type="Texture" id=14]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.147287, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0.929412, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+min_value = -1.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 250, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, -20, 0 )
+angular_velocity = 100.47
+angular_velocity_random = 0.4
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 4.0
+scale_random = 0.51
+color_ramp = SubResource( 2 )
+hue_variation_curve = SubResource( 4 )
 
 [node name="Level-3" type="Node2D"]
 script = ExtResource( 7 )
@@ -118,3 +146,10 @@ texture = ExtResource( 14 )
 [node name="drygrass_props5" type="Sprite" parent="Doodads"]
 position = Vector2( 38.9601, 107.897 )
 texture = ExtResource( 14 )
+
+[node name="LavaParticle" type="Particles2D" parent="."]
+position = Vector2( 246.881, 307.726 )
+amount = 40
+lifetime = 3.0
+randomness = 0.15
+process_material = SubResource( 5 )

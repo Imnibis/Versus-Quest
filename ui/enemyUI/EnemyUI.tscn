@@ -43,13 +43,16 @@ __meta__ = {
 margin_left = 319.327
 margin_top = 7.07772
 margin_right = 367.327
-margin_bottom = 23.0778
+margin_bottom = 23.0777
 rect_scale = Vector2( 0.7, 0.7 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Monstersabel" type="RichTextLabel" parent="."]
 margin_left = 361.241

@@ -28,13 +28,16 @@ __meta__ = {
 [node name="EmptyHearts" type="TextureRect" parent="."]
 margin_left = 251.69
 margin_top = 7.00498
-margin_right = 300.69
-margin_bottom = 24.0051
+margin_right = 299.69
+margin_bottom = 24.005
 rect_scale = Vector2( 0.7, 0.7 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FullHearts" type="TextureRect" parent="."]
 margin_left = 251.69
