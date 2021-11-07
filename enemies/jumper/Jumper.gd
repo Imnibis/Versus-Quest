@@ -14,12 +14,16 @@ export var FALLING_MIDDLE_JUMP_THRESHHOLD = 30.0
 
 var velocity : Vector2 = Vector2.ZERO
 var keep_direction : Vector2 = Vector2(-1, 0)
+var dead = false
 
 func _ready():
-	pass
+	$DyingTimer.connect("timeout", self, "free")
+	$DyingTimer2.connect("timeout", self, "disappear")
 	$AnimatedSprite.play("Idle")
 
 func _physics_process(delta):
+	if dead:
+		return
 	if velocity.y > MAX_FALL_SPEED:
 		velocity.y = MAX_FALL_SPEED
 	
@@ -68,3 +72,27 @@ func handle_jump():
 			else:
 				frame = 2
 		$AnimatedSprite.set_frame(frame)
+
+func death():
+	velocity = Vector2.ZERO
+	dead = true
+	$AnimatedSprite.modulate = Color(255, 255, 255, 1)
+	# play death animation
+	$TouchPlayer.queue_free()
+	$DyingEffect.emitting = true
+	$DyingTimer2.start(0.1)
+	$DyingTimer.start(1)
+
+func disappear():
+	$AnimatedSprite.hide()
+
+func free():
+	queue_free()
+
+func _on_TouchPlayer_area_shape_entered(area_id, area, area_shape, local_shape):
+	if area.is_in_group("damage"):
+		death()
+
+func _on_TouchPlayer_body_entered(body):
+	if body.is_in_group("damage"):
+		death()

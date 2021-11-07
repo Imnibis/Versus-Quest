@@ -10,7 +10,6 @@ var speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("body_entered", self, "_on_ShooterProjectile_body_entered")
 	$Timeout.connect("timeout", self, "timeout")
 
 func _physics_process(delta):
@@ -18,9 +17,10 @@ func _physics_process(delta):
 	$AnimatedSprite.flip_h = (direction == "RIGHT")
 	$LeftCollision.disabled = (direction == "RIGHT")
 	$RightCollision.disabled = (direction == "LEFT")
+	
 
-func _on_ShooterProjectile_body_entered(body):
-	if body.is_in_group("playable") and body != shooter:
+func _on_ShooterProjectile_area_entered(area):
+	if area.is_in_group("playable"):
 		queue_free()
 
 func timeout():
@@ -29,3 +29,4 @@ func timeout():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
