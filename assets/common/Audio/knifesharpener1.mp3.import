@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/knifesharpener1.mp3-af8a3f329b763ee7b26ff92f589ac92d.mp3str"
+
+[deps]
+
+source_file="res://assets/common/Audio/knifesharpener1.mp3"
+dest_files=[ "res://.import/knifesharpener1.mp3-af8a3f329b763ee7b26ff92f589ac92d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -10,3 +10,4 @@ func on_body_entered(body):
 
 func on_timeout():
 	$AnimationPlayer.play("default")
+	$SpikesSound.play()

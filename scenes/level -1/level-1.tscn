@@ -63,10 +63,10 @@ position = Vector2( 288.217, 170.358 )
 
 [node name="Arrow_trap" parent="Traps" instance=ExtResource( 14 )]
 position = Vector2( 393.501, 134.345 )
+direction = "RIGHT"
 
 [node name="Lever" parent="Traps" instance=ExtResource( 13 )]
 position = Vector2( 390.555, 77.2607 )
-scale = Vector2( 2, 2 )
 
 [node name="Floor" type="TileMap" parent="." groups=[
 "floor",
