@@ -19,27 +19,27 @@ atlas = ExtResource( 4 )
 region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 5 )
 region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
+atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 1 )
 region = Rect2( 16, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=10]
@@ -51,12 +51,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Jump",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "Jump",
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -104,7 +104,7 @@ scale = Vector2( 0.8, 0.773 )
 shape = SubResource( 11 )
 
 [node name="TouchPlayer" type="Area2D" parent="." groups=[
-"damage",
+"damage_player",
 "playable",
 ]]
 collision_layer = 2
