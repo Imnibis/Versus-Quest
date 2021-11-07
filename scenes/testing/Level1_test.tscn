@@ -44,11 +44,11 @@ limit_bottom = 310
 limit_smoothed = true
 
 [node name="Jumper" parent="." instance=ExtResource( 6 )]
-position = Vector2( 286.144, 181.115 )
+position = Vector2( 211.781, 209.036 )
 JUMP_FORCE = 250.0
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 98.7849, 230.668 )
 
-[node name="Node2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 331.839, 185.185 )
+[node name="Shooter" parent="." instance=ExtResource( 7 )]
+position = Vector2( 324.732, 183.992 )
