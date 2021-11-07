@@ -22,7 +22,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 1 )
 
-[node name="ShooterProjectile" type="Area2D"]
+[node name="ShooterProjectile" type="Area2D" groups=[
+"damage",
+]]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -37,3 +39,6 @@ disabled = true
 [node name="LeftCollision" type="CollisionShape2D" parent="."]
 position = Vector2( -3, 0 )
 shape = SubResource( 1 )
+
+[node name="Timeout" type="Timer" parent="."]
+wait_time = 10.0
