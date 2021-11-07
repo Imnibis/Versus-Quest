@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://enemies/charger/Charger_idle.png" type="Texture" id=1]
 [ext_resource path="res://enemies/charger/Charger.gd" type="Script" id=2]
@@ -55,6 +55,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 5, 5 )
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 5.57987, 5.59026 )
+
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
 dash_object = ExtResource( 3 )
@@ -79,3 +82,13 @@ shape = SubResource( 9 )
 
 [node name="DashCooldown" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="TouchPlayer" type="Area2D" parent="." groups=[
+"damage",
+]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchPlayer"]
+position = Vector2( 0.0468216, -4.91632 )
+shape = SubResource( 10 )

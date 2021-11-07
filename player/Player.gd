@@ -13,6 +13,7 @@ export var LOW_JUMP_MULTIPLIER = 3
 export var MAX_FALL_SPEED = 200
 export var JUMP_FORCE = 300
 export var ACCELERATION = 10
+export(String, "LEFT, RIGHT") var START_POSITION
 
 var is_dashing : bool = false
 var can_dash : bool = true
@@ -30,13 +31,16 @@ func _ready():
 	$DyingTimer2.connect("timeout", self, "white_color")
 	$DashEnable.emitting = true
 	$AnimatedSprite.play("Idle")
+	
+	if START_POSITION == "LEFT":
+		$AnimatedSprite.flip_h = false
+	else:
+		$AnimatedSprite.flip_h = true
 
 func _physics_process(delta):
 	
 	if is_dead:
 			return
-				
-	print(velocity.y)
 				
 	if velocity.y > 0:
 		falling = true
@@ -110,6 +114,7 @@ func death():
 	$DyingTimer2.start(0.1)
 	$DyingTimer.start(1)
 	$DashEnable.hide()
+	$DashParticules.hide()
 
 func white_color():
 	$AnimatedSprite.hide()
