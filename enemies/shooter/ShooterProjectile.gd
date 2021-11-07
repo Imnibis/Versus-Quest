@@ -14,7 +14,7 @@ func _ready():
 
 func _physics_process(delta):
 	position.x += (speed * delta) * (-1 if direction == "LEFT" else 1)
-	$Sprite.flip_h = (direction == "RIGHT")
+	$AnimatedSprite.flip_h = (direction == "RIGHT")
 	$LeftCollision.disabled = (direction == "RIGHT")
 	$RightCollision.disabled = (direction == "LEFT")
 
