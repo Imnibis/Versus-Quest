@@ -59,13 +59,13 @@ limit_smoothed = true
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="spikes" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 246.75, 138.25 )
+position = Vector2( 246.75, 136.166 )
 
 [node name="spikes2" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 159.169, 265.899 )
+position = Vector2( 159.169, 264.247 )
 
 [node name="spikes3" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 250.039, 265.901 )
+position = Vector2( 248.859, 263.777 )
 
 [node name="Floor" type="TileMap" parent="." groups=[
 "floor",
@@ -147,6 +147,7 @@ position = Vector2( 87.3033, 16.0006 )
 texture = ExtResource( 16 )
 
 [node name="CountDown" parent="." instance=ExtResource( 19 )]
+visible = false
 margin_left = 246.24
 margin_top = 164.958
 margin_right = 246.24

@@ -57,10 +57,10 @@ limit_smoothed = true
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="spikes" parent="Traps" instance=ExtResource( 12 )]
-position = Vector2( 224.121, 202.286 )
+position = Vector2( 225.524, 200.181 )
 
 [node name="spikes2" parent="Traps" instance=ExtResource( 12 )]
-position = Vector2( 288.217, 170.358 )
+position = Vector2( 288.357, 168.113 )
 
 [node name="Arrow_trap" parent="Traps" instance=ExtResource( 14 )]
 position = Vector2( 393.501, 134.345 )

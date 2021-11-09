@@ -61,17 +61,17 @@ limit_smoothed = true
 [node name="spikes" parent="Traps" groups=[
 "damage",
 ] instance=ExtResource( 7 )]
-position = Vector2( 95.9636, 281.913 )
+position = Vector2( 95.9636, 280.089 )
 
 [node name="spikes2" parent="Traps" groups=[
 "damage",
 ] instance=ExtResource( 7 )]
-position = Vector2( 414.104, 281.86 )
+position = Vector2( 414.104, 280.036 )
 
 [node name="spikes3" parent="Traps" groups=[
 "damage",
 ] instance=ExtResource( 7 )]
-position = Vector2( 266.435, 186.658 )
+position = Vector2( 265.733, 184.132 )
 
 [node name="Arrow_trap_right" parent="Traps" instance=ExtResource( 8 )]
 position = Vector2( 41.9662, 279.526 )

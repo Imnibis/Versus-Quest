@@ -67,16 +67,16 @@ limit_smoothed = true
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="spikes2" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 261.591, 186.406 )
+position = Vector2( 261.801, 183.883 )
 
 [node name="spikes" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 218.969, 186.339 )
+position = Vector2( 218.969, 183.816 )
 
 [node name="spikes3" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 425.566, 138.214 )
+position = Vector2( 423.884, 136.112 )
 
 [node name="spikes4" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 233.191, 41.5888 )
+position = Vector2( 233.191, 39.907 )
 
 [node name="Floor" type="TileMap" parent="." groups=[
 "floor",

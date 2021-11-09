@@ -83,13 +83,13 @@ limit_smoothed = true
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="spikes" parent="Traps" instance=ExtResource( 12 )]
-position = Vector2( 116.656, 89.6682 )
+position = Vector2( 119.179, 88.4068 )
 
-[node name="spikes" parent="Traps/spikes" instance=ExtResource( 12 )]
-position = Vector2( 98.5282, 0.0639801 )
+[node name="spikes2" parent="Traps" instance=ExtResource( 12 )]
+position = Vector2( 215.815, 88.4708 )
 
-[node name="spikes2" parent="Traps/spikes" instance=ExtResource( 12 )]
-position = Vector2( 193.046, 0.448746 )
+[node name="spikes3" parent="Traps" instance=ExtResource( 12 )]
+position = Vector2( 307.39, 88.2249 )
 
 [node name="Floor" type="TileMap" parent="." groups=[
 "floor",
@@ -108,7 +108,7 @@ scale = Vector2( 1.3, 1.3 )
 position = Vector2( 296.536, 193.907 )
 
 [node name="Charger" parent="." instance=ExtResource( 9 )]
-position = Vector2( 344.924, 94.0758 )
+position = Vector2( 342.191, 91.5531 )
 
 [node name="Shooter" parent="." instance=ExtResource( 13 )]
 position = Vector2( 462.56, 88.2082 )
