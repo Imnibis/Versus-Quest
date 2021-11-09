@@ -22,6 +22,6 @@ func change_value():
 	if time == 0:
 		finish = true
 		return
-	$Timer.bbcode_text = String(time)
+	$Timer.bbcode_text = "[center]" + String(time) + "[/center]"
 	$Decrease.start(1)
 	pass
