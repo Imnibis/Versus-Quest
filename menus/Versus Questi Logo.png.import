@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Charger_walk.png-97249bd08f72552b9e1e553d905ed7ac.stex"
+path="res://.import/Versus Questi Logo.png-5b9fcc53f704a406a612d461790a08ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/charger/Charger_walk.png"
-dest_files=[ "res://.import/Charger_walk.png-97249bd08f72552b9e1e553d905ed7ac.stex" ]
+source_file="res://menus/Versus Questi Logo.png"
+dest_files=[ "res://.import/Versus Questi Logo.png-5b9fcc53f704a406a612d461790a08ee.stex" ]
 
 [params]
 

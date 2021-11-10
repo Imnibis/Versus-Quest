@@ -58,19 +58,13 @@ limit_smoothed = true
 
 [node name="Traps" type="Node2D" parent="."]
 
-[node name="spikes" parent="Traps" groups=[
-"damage",
-] instance=ExtResource( 7 )]
+[node name="spikes" parent="Traps" groups=["damage"] instance=ExtResource( 7 )]
 position = Vector2( 95.9636, 280.089 )
 
-[node name="spikes2" parent="Traps" groups=[
-"damage",
-] instance=ExtResource( 7 )]
+[node name="spikes2" parent="Traps" groups=["damage"] instance=ExtResource( 7 )]
 position = Vector2( 414.104, 280.036 )
 
-[node name="spikes3" parent="Traps" groups=[
-"damage",
-] instance=ExtResource( 7 )]
+[node name="spikes3" parent="Traps" groups=["damage"] instance=ExtResource( 7 )]
 position = Vector2( 265.733, 184.132 )
 
 [node name="Arrow_trap_right" parent="Traps" instance=ExtResource( 8 )]
@@ -84,9 +78,7 @@ direction = "RIGHT"
 [node name="Lever" parent="Traps" instance=ExtResource( 10 )]
 position = Vector2( 97.7979, 110.084 )
 
-[node name="Floor" type="TileMap" parent="." groups=[
-"floor",
-]]
+[node name="Floor" type="TileMap" parent="." groups=["floor"]]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
@@ -164,10 +156,7 @@ margin_top = 154.045
 margin_right = 234.881
 margin_bottom = 154.045
 
-[node name="KillingWater" type="Area2D" parent="." groups=[
-"damage",
-"playable",
-]]
+[node name="KillingWater" type="Area2D" parent="." groups=["damage", "playable"]]
 collision_layer = 3
 collision_mask = 3
 

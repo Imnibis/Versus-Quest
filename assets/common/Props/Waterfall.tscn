@@ -56,97 +56,99 @@ animations = [ {
 } ]
 
 [node name="Waterfall" type="Node2D"]
-position = Vector2( 31.0803, 13.6992 )
 scale = Vector2( 1, 1.13228 )
 
 [node name="Waterfall" type="AnimatedSprite" parent="."]
-position = Vector2( -0.0537376, -0.995109 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, 17.6635 )
+scale = Vector2( 1.5, 1.03037 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 
 [node name="Waterfall2" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 46 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 4, 29.639 )
+scale = Vector2( 1.5, 1.06717 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
+offset = Vector2( 8, 12.3644 )
 
 [node name="Waterfall3" type="AnimatedSprite" parent="."]
-position = Vector2( -0.0113716, 69.9317 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, 93.1748 )
+scale = Vector2( 1.5, 0.919972 )
 frames = SubResource( 5 )
-frame = 3
 playing = true
 
 [node name="Waterfall4" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, 184.648 )
+scale = Vector2( 1.5, 1.059 )
 frames = SubResource( 5 )
-frame = 3
 playing = true
 offset = Vector2( 0, 92 )
 
 [node name="Waterfall5" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, -2.06043 )
+scale = Vector2( 1.5, 1.0318 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, 115 )
 
 [node name="Waterfall6" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, 25.7627 )
+scale = Vector2( 1.5, 1.00581 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, 138 )
 
 [node name="Waterfall7" type="AnimatedSprite" parent="."]
+position = Vector2( 16, -21.1962 )
 scale = Vector2( 1.5, 1 )
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, 162 )
 
 [node name="Waterfall8" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 0.956605 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, -1.61918 )
+scale = Vector2( 1.5, 1.03037 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, 185 )
 
 [node name="Waterfall9" type="AnimatedSprite" parent="."]
-position = Vector2( 0.148651, -0.131285 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, 6.03201 )
+scale = Vector2( 1.5, 0.99626 )
 frames = SubResource( 5 )
-frame = 3
 playing = true
 offset = Vector2( 0, 208 )
 
 [node name="Waterfall10" type="AnimatedSprite" parent="."]
-position = Vector2( 0.0936508, 0.745445 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, -0.715702 )
+scale = Vector2( 1.5, 1.0315 )
 frames = SubResource( 5 )
-frame = 1
+frame = 2
 playing = true
 offset = Vector2( 0, 231 )
 
 [node name="Waterfall11" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 23 )
-scale = Vector2( 1.5, 1 )
+position = Vector2( 16, 68.8876 )
+scale = Vector2( 1.5, 1.10397 )
 frames = SubResource( 5 )
-frame = 3
 playing = true
 
 [node name="Waterfall12" type="AnimatedSprite" parent="."]
-position = Vector2( 0, 48.979 )
-scale = Vector2( 1.5, 0.797607 )
+position = Vector2( 16, 54.0207 )
+scale = Vector2( 1.5, 0.809576 )
 frames = SubResource( 5 )
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, 254 )
 
 [node name="WaterfallBottom" type="AnimatedSprite" parent="."]
-position = Vector2( 0.705635, 246.481 )
+position = Vector2( 16, 287.031 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 10 )
 frame = 2

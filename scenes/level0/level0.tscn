@@ -78,9 +78,7 @@ position = Vector2( 423.884, 136.112 )
 [node name="spikes4" parent="Traps" instance=ExtResource( 7 )]
 position = Vector2( 233.191, 39.907 )
 
-[node name="Floor" type="TileMap" parent="." groups=[
-"floor",
-]]
+[node name="Floor" type="TileMap" parent="." groups=["floor"]]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
@@ -101,6 +99,7 @@ position = Vector2( 349.932, 152.699 )
 position = Vector2( 62.6449, 132.351 )
 
 [node name="Waterfall" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2, -32 )
 
 [node name="foreground" type="Node2D" parent="."]
 
@@ -150,10 +149,7 @@ margin_top = 164.958
 margin_right = 246.24
 margin_bottom = 164.958
 
-[node name="KillingWater" type="Area2D" parent="." groups=[
-"damage",
-"playable",
-]]
+[node name="KillingWater" type="Area2D" parent="." groups=["damage", "playable"]]
 collision_layer = 3
 collision_mask = 3
 
