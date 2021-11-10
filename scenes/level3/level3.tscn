@@ -145,7 +145,6 @@ position = Vector2( 87.3033, 16.0006 )
 texture = ExtResource( 16 )
 
 [node name="CountDown" parent="." instance=ExtResource( 19 )]
-visible = false
 margin_left = 246.24
 margin_top = 164.958
 margin_right = 246.24

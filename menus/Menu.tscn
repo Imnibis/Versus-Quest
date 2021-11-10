@@ -191,7 +191,7 @@ align = 0
 [node name="HeroSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 250, 232 )
 frames = SubResource( 7 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="EnemySprite1" type="AnimatedSprite" parent="."]
