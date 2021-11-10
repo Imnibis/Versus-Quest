@@ -167,7 +167,8 @@ text = "Quit"
 [node name="PloofParticles" type="Particles2D" parent="."]
 position = Vector2( 270, 276 )
 emitting = false
-amount = 50
+amount = 70
+lifetime = 3.0
 one_shot = true
 explosiveness = 0.88
 randomness = 0.16
