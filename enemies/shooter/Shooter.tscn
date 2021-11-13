@@ -5,10 +5,6 @@
 [ext_resource path="res://enemies/shooter/ShooterProjectile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemies/shooter/Shooter_shoot.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
@@ -21,16 +17,20 @@ region = Rect2( 16, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "Shoot",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "Shoot",
 "speed": 5.0
 } ]
 
@@ -52,9 +52,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.996078, 0.0509804, 0.0509804, 1 )
 
-[node name="Shooter" type="KinematicBody2D" groups=[
-"playable",
-]]
+[node name="Shooter" type="KinematicBody2D" groups=["playable"]]
 script = ExtResource( 2 )
 projectile_object = ExtResource( 3 )
 projectile_speed = 80.0
@@ -68,10 +66,7 @@ playing = true
 position = Vector2( 0, 3 )
 shape = SubResource( 6 )
 
-[node name="TouchPlayer" type="Area2D" parent="." groups=[
-"damage_player",
-"playable",
-]]
+[node name="TouchPlayer" type="Area2D" parent="." groups=["damage_player", "playable"]]
 collision_layer = 2
 collision_mask = 2
 

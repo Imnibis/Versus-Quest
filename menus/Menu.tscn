@@ -54,13 +54,9 @@ region = Rect2( 80, 0, 16, 16 )
 atlas = ExtResource( 7 )
 region = Rect2( 96, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 7 )
-region = Rect2( 112, 0, 16, 16 )
-
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -123,7 +119,7 @@ animations = [ {
 "frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 8.0
 } ]
 
 [sub_resource type="DynamicFont" id=20]
@@ -132,6 +128,26 @@ font_data = ExtResource( 14 )
 
 [sub_resource type="Theme" id=21]
 default_font = SubResource( 20 )
+
+[sub_resource type="GDScript" id=22]
+script/source = "extends RichTextLabel
+
+
+func _ready():
+	$AnimationTween.connect(\"tween_all_completed\", self, \"tween_playback\")
+	$AnimationTween.emit_signal(\"tween_all_completed\")
+	
+func tween_playback():
+	$AnimationTween.interpolate_property(self, \"rect_rotation\", self.rect_rotation, self.rect_rotation + 10, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	$AnimationTween.start()	
+	yield($AnimationTween, \"tween_completed\")
+	$AnimationTween.interpolate_property(self, \"rect_rotation\", self.rect_rotation, self.rect_rotation - 20, 1, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	$AnimationTween.start()
+	yield($AnimationTween, \"tween_completed\")	
+	$AnimationTween.interpolate_property(self, \"rect_rotation\", self.rect_rotation, self.rect_rotation + 10, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+	$AnimationTween.start()
+	yield($AnimationTween, \"tween_completed\")
+"
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -197,26 +213,17 @@ playing = true
 [node name="EnemySprite1" type="AnimatedSprite" parent="."]
 position = Vector2( 312, 218 )
 frames = SubResource( 11 )
-frame = 2
 playing = true
 
 [node name="EnemySprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 311, 232 )
 frames = SubResource( 15 )
-frame = 2
 playing = true
 
 [node name="EnemySprite3" type="AnimatedSprite" parent="."]
 position = Vector2( 290, 232 )
 frames = SubResource( 19 )
-frame = 1
-playing = true
-flip_h = true
-
-[node name="EnemySprite4" type="AnimatedSprite" parent="."]
-position = Vector2( 298, 28 )
-frames = SubResource( 19 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Doodads" type="Node2D" parent="."]
@@ -264,24 +271,26 @@ position = Vector2( 264, -61.8116 )
 scale = Vector2( 2.33615, 4.82735 )
 texture = ExtResource( 5 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Title" type="RichTextLabel" parent="."]
 margin_left = 208.0
 margin_top = 24.0
-margin_right = 320.0
-margin_bottom = 56.0
+margin_right = 360.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( 75, 25 )
 theme = SubResource( 21 )
 bbcode_enabled = true
 bbcode_text = "[color=red]Versus[/color]"
 text = "Versus"
+script = SubResource( 22 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 264.0
-margin_top = 45.0
-margin_right = 380.0
-margin_bottom = 77.0
+[node name="Title2" type="RichTextLabel" parent="Title"]
+margin_left = 56.0
+margin_top = 21.0
+margin_right = 172.0
+margin_bottom = 53.0
 theme = SubResource( 21 )
 bbcode_enabled = true
 bbcode_text = "[color=yellow]QUEST[/color]"
@@ -290,9 +299,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SwordInRock" type="Sprite" parent="."]
-position = Vector2( 341, 42 )
+[node name="EnemySprite4" type="AnimatedSprite" parent="Title"]
+position = Vector2( 90, 4 )
+frames = SubResource( 19 )
+frame = 2
+playing = true
+
+[node name="SwordInRock" type="Sprite" parent="Title"]
+position = Vector2( 133, 18 )
 texture = ExtResource( 15 )
+
+[node name="AnimationTween" type="Tween" parent="Title"]
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_OptionButton_pressed"]

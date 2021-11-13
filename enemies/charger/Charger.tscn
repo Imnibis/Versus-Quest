@@ -38,14 +38,14 @@ region = Rect2( 32, 0, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Dash",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
@@ -112,9 +112,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 color = Color( 0.996078, 0.0509804, 0.0509804, 1 )
 
-[node name="Charger" type="KinematicBody2D" groups=[
-"playable",
-]]
+[node name="Charger" type="KinematicBody2D" groups=["playable"]]
 script = ExtResource( 2 )
 dash_object = ExtResource( 3 )
 max_speed = 80.0
@@ -154,10 +152,7 @@ lifetime = 0.6
 process_material = SubResource( 15 )
 texture = ExtResource( 6 )
 
-[node name="TouchPlayer" type="Area2D" parent="." groups=[
-"damage_player",
-"playable",
-]]
+[node name="TouchPlayer" type="Area2D" parent="." groups=["damage_player", "playable"]]
 collision_layer = 2
 collision_mask = 2
 
