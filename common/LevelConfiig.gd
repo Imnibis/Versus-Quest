@@ -40,7 +40,8 @@ func player_won():
 	#get_tree().change_scene(levelIfWin)
 
 func player_dead():
-	get_tree().change_scene(levelIfLose)
+	TransitionsAl.new_scene_dir = levelIfLose
+	TransitionsAl.load_state()
 
 func finish():
 	get_tree().paused = false

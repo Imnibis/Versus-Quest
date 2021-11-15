@@ -207,23 +207,24 @@ align = 0
 [node name="HeroSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 250, 232 )
 frames = SubResource( 7 )
-frame = 2
 playing = true
 
 [node name="EnemySprite1" type="AnimatedSprite" parent="."]
 position = Vector2( 312, 218 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="EnemySprite2" type="AnimatedSprite" parent="."]
 position = Vector2( 311, 232 )
 frames = SubResource( 15 )
+frame = 1
 playing = true
 
 [node name="EnemySprite3" type="AnimatedSprite" parent="."]
 position = Vector2( 290, 232 )
 frames = SubResource( 19 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Doodads" type="Node2D" parent="."]
@@ -302,7 +303,7 @@ __meta__ = {
 [node name="EnemySprite4" type="AnimatedSprite" parent="Title"]
 position = Vector2( 90, 4 )
 frames = SubResource( 19 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="SwordInRock" type="Sprite" parent="Title"]
